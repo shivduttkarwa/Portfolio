@@ -1,10 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize Locomotive Scroll
+  // Initialize Locomotive Scroll with better settings
   const scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
-    smartphone: { smooth: true },
-    tablet: { smooth: true },
+    multiplier: 1,
+    class: "is-revealed",
+    smartphone: {
+      smooth: false,
+      breakpoint: 768,
+    },
+    tablet: {
+      smooth: false,
+      breakpoint: 1024,
+    },
   });
 
   // Initialize Testimonials Swiper
@@ -93,42 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
       menuTrigger.classList.remove("active");
       mobileMenu.classList.remove("active");
       document.body.style.overflow = "";
-    });
-  });
-
-  // Custom cursor
-  const cursor = document.querySelector(".cursor");
-  const cursorFollower = document.querySelector(".cursor-follower");
-
-  document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-
-    gsap.to(cursorFollower, {
-      x: e.clientX,
-      y: e.clientY,
-      duration: 0.6,
-      ease: "power3.out",
-    });
-  });
-
-  // Cursor hover effects
-  const hoverElements = document.querySelectorAll(
-    "a, button, .project-card, .service-item"
-  );
-  hoverElements.forEach((el) => {
-    el.addEventListener("mouseenter", () => {
-      cursor.style.transform = "translate(-50%, -50%) scale(2)";
-      cursorFollower.style.width = "50px";
-      cursorFollower.style.height = "50px";
-      cursorFollower.style.backgroundColor = "rgba(255, 94, 26, 0.2)";
-    });
-
-    el.addEventListener("mouseleave", () => {
-      cursor.style.transform = "translate(-50%, -50%) scale(1)";
-      cursorFollower.style.width = "30px";
-      cursorFollower.style.height = "30px";
-      cursorFollower.style.backgroundColor = "transparent";
     });
   });
 

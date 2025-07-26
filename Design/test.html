@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fluid Hover Effect (Like CodePen)</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: #000;
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        cursor: none;
+      }
+
+      .hero {
+        position: relative;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 8vw;
+        font-weight: 700;
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+      }
+
+      .text {
+        display: inline-block;
+        position: relative;
+      }
+
+      .cursor {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        mix-blend-mode: difference;
+        transition: transform 0.1s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursor"></div>
+
+    <div class="hero">
+      <h1 class="text" data-text="LIQUID EFFECT">LIQUID EFFECT</h1>
+    </div>
+
+    <script>
+     const text = document.querySelector('.text');
+const cursor = document.querySelector('.cursor');
+
+// Split text into spans for per-character control
+text.innerHTML = text.textContent.split('').map(char => 
+    `<span style="display: inline-block; position: relative;">${char === ' ' ? '&nbsp;' : char}</span>`
+).join('');
+
+const chars = document.querySelectorAll('.text span');
+
+let mouseX = 0, mouseY = 0;
+let cursorX = 0, cursorY = 0;
+
+// Track mouse movement
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+});
+
+// Animation loop for fluid distortion
+function animate() {
+    cursorX += (mouseX - cursorX) * 0.1;
+    cursorY += (mouseY - cursorY) * 0.1;
+
+    chars.forEach((char, index) => {
+        const rect = char.getBoundingClientRect();
+        const charX = rect.left + rect.width / 2;
+        const charY = rect.top + rect.height / 2;
+
+        const distanceX = cursorX - charX;
+        const distanceY = cursorY - charY;
+        const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+
+        // Apply distortion effect
+        if (distance < 100) {
+            const force = (100 - distance) / 100;
+            const angle = Math.atan2(distanceY, distanceX);
+            const translateX = Math.cos(angle) * force * 30;
+            const translateY = Math.sin(angle) * force * 30;
+
+            char.style.transform = `translate(${translateX}px, ${translateY}px)`;
+            char.style.filter = `blur(${force * 2}px)`;
+        } else {
+            char.style.transform = 'translate(0, 0)';
+            char.style.filter = 'blur(0)';
+        }
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+    </script>
+  </body>
+</html>

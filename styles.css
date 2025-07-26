@@ -148,14 +148,14 @@ body {
   width: 90%;
   height: auto;
   filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
-  clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%);
-  shape-outside: polygon(0 0, 100% 0%, 80% 100%, 0% 100%);
+  /* clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%); */
+  /* shape-outside: polygon(0 0, 100% 0%, 80% 100%, 0% 100%); */
 }
 
 /* Vertical Scroll Indicator */
 .scroll-hint {
   position: absolute;
-  bottom: 5vh;
+  bottom: -3vh;
   right: 50%;
   display: flex;
   flex-direction: column;
@@ -582,31 +582,6 @@ footer p {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* Cursor */
-.cursor {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  background-color: var(--primary);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease;
-}
-
-.cursor-follower {
-  position: fixed;
-  width: 30px;
-  height: 30px;
-  border: 1px solid var(--primary);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 998;
-  transform: translate(-50%, -50%);
-  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
-}
-
 /* Swiper Navigation */
 .swiper-pagination-bullet {
   background: var(--text);
@@ -730,17 +705,19 @@ footer p {
   }
 
   .hero {
+    height: 70vh;
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    padding-top: 15vh;
+    padding-top: 100px;
+    margin-bottom: 30px;
   }
 
   .hero-content {
     width: 100%;
     margin-left: 0;
     padding-right: 0;
-    margin-bottom: 3rem;
+    margin-bottom: 15rem;
   }
 
   .hero-title {
@@ -755,8 +732,19 @@ footer p {
     position: relative;
     width: 80%;
     left: auto;
-    margin: 0 auto 3rem;
+    margin: 2rem;
     order: -1;
+  }
+
+  .hero-image {
+    width: 75%;
+    height: auto;
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
+    /* clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%); */
+    shape-outside: polygon(0 0, 100% 0%, 80% 100%, 0% 100%);
+    padding: 40px;
+    margin-left: 46px;
+    margin-top: 57px;
   }
 
   .service-grid {
