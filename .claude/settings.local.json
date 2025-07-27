@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(python:*)",
-      "WebFetch(domain:www.karim-saab.com)"
+      "WebFetch(domain:www.karim-saab.com)",
+      "Bash(git checkout:*)"
     ],
     "deny": []
   }

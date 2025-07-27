@@ -20,6 +20,34 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet" />
+    <link
+      href="https://fonts.cdnfonts.com/css/departure-mono"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/threedpixel" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/3d-isometric" rel="stylesheet" />
+
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
@@ -27,42 +55,118 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-barba="wrapper">
-    <!-- Mobile Menu Trigger -->
-    <div class="mobile-menu-trigger">
-      <span></span>
-      <span></span>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-menu" id="hamburger">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Interactive Cursor with Particles -->
+    <div class="menu-cursor" id="menu-cursor">
+      <div class="cursor-core"></div>
+      <div class="cursor-trail"></div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-      <nav>
-        <a href="#work">> Work</a>
-        <a href="#about">> About</a>
-        <a href="#services">> Services</a>
-        <a href="#testimonials">> Testimonials</a>
-        <a href="#contact">> Contact_</a>
-        <div class="social-links">
-          <a href="#" target="_blank">GitHub</a>
-          <a href="#" target="_blank">LinkedIn</a>
-          <a href="#" target="_blank">Twitter</a>
+    <!-- Split Screen Full Page Menu -->
+    <div class="fullpage-menu" id="fullpage-menu">
+      <div class="menu-background"></div>
+
+      <!-- Left Half - Navigation -->
+      <div class="menu-left">
+        <nav class="main-navigation">
+          <div class="nav-item">
+            <span class="nav-number">01</span>
+            <a href="#work" class="nav-link">
+              <span class="nav-text" data-text="WORK">WORK</span>
+              <span class="nav-subtitle">Selected Projects</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <span class="nav-number">02</span>
+            <a href="#services" class="nav-link">
+              <span class="nav-text" data-text="SERVICES">SERVICES</span>
+              <span class="nav-subtitle">What I Offer</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <span class="nav-number">03</span>
+            <a href="#testimonials" class="nav-link">
+              <span class="nav-text" data-text="TESTIMONIALS"
+                >TESTIMONIALS</span
+              >
+              <span class="nav-subtitle">Client Reviews</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <span class="nav-number">04</span>
+            <a href="#about" class="nav-link">
+              <span class="nav-text" data-text="ABOUT">ABOUT</span>
+              <span class="nav-subtitle">My Story</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <span class="nav-number">05</span>
+            <a href="#contact" class="nav-link">
+              <span class="nav-text" data-text="CONTACT">CONTACT</span>
+              <span class="nav-subtitle">Let's Talk</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Right Half - Logo & Contact -->
+      <div class="menu-right">
+        <div class="menu-right-content">
+          <!-- Logo Section -->
+          <div class="logo-section">
+            <img src="img/logo.png" alt="Shivdutt Logo" class="menu-logo" />
+          </div>
+
+          <!-- Contact Buttons -->
+          <div class="contact-buttons">
+            <a
+              href="mailto:shivduttkarwa@gmail.com"
+              class="contact-btn primary"
+            >
+              <i class="fa fa-envelope"></i>
+              <span>Get In Touch</span>
+            </a>
+            <a href="#" class="contact-btn secondary">
+              <i class="fa fa-download"></i>
+              <span>Download CV</span>
+            </a>
+          </div>
+
+          <!-- Social Media -->
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <i class="fa fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fa fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fa fa-twitter"></i>
+              <span>Twitter</span>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fa fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </div>
         </div>
-      </nav>
+      </div>
     </div>
-
 
     <div class="scroll-container" data-scroll-container>
       <!-- Hero Section -->
       <section class="hero" data-scroll-section>
-        <nav class="desktop-nav">
-          <a href="#" class="logo">Shivdutt.dev</a>
-          <div class="nav-links">
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
+        <a-hole>
+          <canvas class="js-canvas"></canvas>
+        </a-hole>
 
         <!-- Hero Image on Left -->
         <div class="hero-image-wrapper">
@@ -86,30 +190,98 @@
 
       <!-- Services Section -->
       <section class="services" data-scroll-section id="services">
-        <h2>SERVICES</h2>
-        <div class="service-grid">
-          <div class="service-item">
-            <h3>Web Development</h3>
-            <p>React, Next.js, Node.js</p>
+        <div class="services-container">
+          <div class="services-header">
+            <h2 class="services-title">SERVICES</h2>
+            <p class="services-subtitle">
+              Crafting digital excellence across the full stack
+            </p>
           </div>
-          <div class="service-item">
-            <h3>Cloud Solutions</h3>
-            <p>AWS, Docker, Kubernetes</p>
-          </div>
-          <div class="service-item">
-            <h3>UI/UX Design</h3>
-            <p>Figma, Framer, Webflow</p>
-          </div>
-          <div class="service-item">
-            <h3>DevOps</h3>
-            <p>CI/CD, Terraform, Monitoring</p>
+
+          <div class="services-grid">
+            <div class="service-card" data-service="frontend">
+              <div class="service-icon">
+                <span class="service-number">01</span>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Frontend Development</h3>
+                <p class="service-description">
+                  Modern, responsive interfaces built with cutting-edge
+                  frameworks
+                </p>
+                <div class="service-tech">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Next.js</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Tailwind</span>
+                </div>
+              </div>
+              <div class="service-arrow">→</div>
+            </div>
+
+            <div class="service-card" data-service="backend">
+              <div class="service-icon">
+                <span class="service-number">02</span>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Backend Development</h3>
+                <p class="service-description">
+                  Scalable server architectures and robust API solutions
+                </p>
+                <div class="service-tech">
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">.NET</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                </div>
+              </div>
+              <div class="service-arrow">→</div>
+            </div>
+
+            <div class="service-card" data-service="cloud">
+              <div class="service-icon">
+                <span class="service-number">03</span>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Cloud Solutions</h3>
+                <p class="service-description">
+                  Deployment, scaling, and infrastructure optimization
+                </p>
+                <div class="service-tech">
+                  <span class="tech-tag">AWS</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">Kubernetes</span>
+                  <span class="tech-tag">Terraform</span>
+                </div>
+              </div>
+              <div class="service-arrow">→</div>
+            </div>
+
+            <div class="service-card" data-service="mobile">
+              <div class="service-icon">
+                <span class="service-number">04</span>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Mobile Development</h3>
+                <p class="service-description">
+                  Cross-platform apps with native performance
+                </p>
+                <div class="service-tech">
+                  <span class="tech-tag">React Native</span>
+                  <span class="tech-tag">Flutter</span>
+                  <span class="tech-tag">iOS</span>
+                  <span class="tech-tag">Android</span>
+                </div>
+              </div>
+              <div class="service-arrow">→</div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Testimonials Section with Swiper -->
       <section class="testimonials" data-scroll-section id="testimonials">
-        <h2>TESTIMONIALS</h2>
+        <h2 class="section-title">TESTIMONIALS</h2>
         <div class="swiper testimonials-swiper">
           <div class="swiper-wrapper">
             <!-- Testimonial Slides (10 total) -->
@@ -201,119 +373,331 @@
         </div>
       </section>
 
-      <!-- Projects Section with Swiper -->
-      <section class="all-projects" data-scroll-section id="work">
-        <h2>PROJECTS</h2>
-        <div class="swiper projects-swiper">
-          <div class="swiper-wrapper">
-            <!-- Project Slides (10 total) -->
-            <div class="swiper-slide">
-              <div class="project-card">
-                <div class="project-number">01</div>
-                <h3 class="project-title">E-Commerce Platform</h3>
-                <p class="project-tech">Next.js · Node.js · MongoDB</p>
-                <div
-                  class="project-image"
-                  style="
-                    background-image: url('img/pexels-joshsorenson-1714208.jpg');
-                  "
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="project-card">
-                <div class="project-number">02</div>
-                <h3 class="project-title">Data Dashboard</h3>
-                <p class="project-tech">D3.js · Python · AWS</p>
-                <div
-                  class="project-image"
-                  style="background-image: url('img/pexels-pixabay-356056.jpg')"
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="project-card">
-                <div class="project-number">01</div>
-                <h3 class="project-title">E-Commerce Platform</h3>
-                <p class="project-tech">Next.js · Node.js · MongoDB</p>
-                <div
-                  class="project-image"
-                  style="background-image: url('img/pexels-pixabay-38519.jpg')"
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="project-card">
-                <div class="project-number">02</div>
-                <h3 class="project-title">Data Dashboard</h3>
-                <p class="project-tech">D3.js · Python · AWS</p>
-                <div
-                  class="project-image"
-                  style="
-                    background-image: url('img/pexels-joshsorenson-1714208.jpg');
-                  "
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="project-card">
-                <div class="project-number">01</div>
-                <h3 class="project-title">E-Commerce Platform</h3>
-                <p class="project-tech">Next.js · Node.js · MongoDB</p>
-                <div
-                  class="project-image"
-                  style="background-image: url('img/pexels-pixabay-356056.jpg')"
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="project-card">
-                <div class="project-number">02</div>
-                <h3 class="project-title">Data Dashboard</h3>
-                <p class="project-tech">D3.js · Python · AWS</p>
-                <div
-                  class="project-image"
-                  style="background-image: url('img/pexels-pixabay-38519.jpg')"
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="project-card">
-                <div class="project-number">01</div>
-                <h3 class="project-title">E-Commerce Platform</h3>
-                <p class="project-tech">Next.js · Node.js · MongoDB</p>
-                <div
-                  class="project-image"
-                  style="
-                    background-image: url('https://source.unsplash.com/random/800x600/?ecommerce');
-                  "
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="project-card">
-                <div class="project-number">02</div>
-                <h3 class="project-title">Data Dashboard</h3>
-                <p class="project-tech">D3.js · Python · AWS</p>
-                <div
-                  class="project-image"
-                  style="
-                    background-image: url('https://source.unsplash.com/random/800x600/?dashboard');
-                  "
-                ></div>
-              </div>
-            </div>
-            <!-- Add 8 more projects following same structure -->
+      <!-- Projects Section - Swiper Slider -->
+      <section class="projects" data-scroll-section id="work">
+        <div class="projects-container">
+          <div class="projects-header">
+            <h2>PROJECTS</h2>
+            <p class="projects-subtitle">
+              Showcasing innovative solutions across the tech stack
+            </p>
           </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+
+          <div class="swiper projects-swiper">
+            <div class="swiper-wrapper">
+              <!-- Project Slides -->
+              <div class="swiper-slide">
+                <article class="project-card">
+                  <div class="project-image">
+                    <img
+                      src="img/pexels-joshsorenson-1714208.jpg"
+                      alt="E-Commerce Platform"
+                    />
+                    <div class="project-overlay">
+                      <div class="project-links">
+                        <a
+                          href="#"
+                          class="project-link"
+                          aria-label="View Live Demo"
+                        >
+                          <span>Live Demo</span>
+                        </a>
+                        <a href="#" class="project-link" aria-label="View Code">
+                          <span>Code</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-header">
+                      <span class="project-category">Full-Stack</span>
+                      <span class="project-year">2024</span>
+                    </div>
+                    <h3 class="project-title">ShopFlow E-Commerce</h3>
+                    <p class="project-description">
+                      Complete e-commerce solution with real-time inventory,
+                      payment processing, and advanced analytics dashboard.
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-pill">Next.js</span>
+                      <span class="tech-pill">Node.js</span>
+                      <span class="tech-pill">PostgreSQL</span>
+                      <span class="tech-pill">Stripe</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="project-card">
+                  <div class="project-image">
+                    <img
+                      src="img/pexels-pixabay-356056.jpg"
+                      alt="Analytics Dashboard"
+                    />
+                    <div class="project-overlay">
+                      <div class="project-links">
+                        <a href="#" class="project-link">
+                          <span>Live Demo</span>
+                        </a>
+                        <a href="#" class="project-link">
+                          <span>Code</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-header">
+                      <span class="project-category">Data Viz</span>
+                      <span class="project-year">2024</span>
+                    </div>
+                    <h3 class="project-title">DataVis Pro</h3>
+                    <p class="project-description">
+                      Interactive dashboard for real-time data visualization and
+                      business intelligence.
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-pill">React</span>
+                      <span class="tech-pill">D3.js</span>
+                      <span class="tech-pill">Python</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="project-card">
+                  <div class="project-image">
+                    <img src="img/pexels-pixabay-38519.jpg" alt="Mobile App" />
+                    <div class="project-overlay">
+                      <div class="project-links">
+                        <a href="#" class="project-link">
+                          <span>Live Demo</span>
+                        </a>
+                        <a href="#" class="project-link">
+                          <span>Code</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-header">
+                      <span class="project-category">Mobile</span>
+                      <span class="project-year">2023</span>
+                    </div>
+                    <h3 class="project-title">FitTracker Pro</h3>
+                    <p class="project-description">
+                      Comprehensive fitness tracking app with social features
+                      and AI recommendations.
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-pill">React Native</span>
+                      <span class="tech-pill">Firebase</span>
+                      <span class="tech-pill">TensorFlow</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="project-card">
+                  <div class="project-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+                      alt="Cloud Platform"
+                    />
+                    <div class="project-overlay">
+                      <div class="project-links">
+                        <a href="#" class="project-link">
+                          <span>Live Demo</span>
+                        </a>
+                        <a href="#" class="project-link">
+                          <span>Code</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-header">
+                      <span class="project-category">DevOps</span>
+                      <span class="project-year">2023</span>
+                    </div>
+                    <h3 class="project-title">CloudDeploy</h3>
+                    <p class="project-description">
+                      Automated deployment pipeline with monitoring and scaling
+                      capabilities.
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-pill">Docker</span>
+                      <span class="tech-pill">Kubernetes</span>
+                      <span class="tech-pill">AWS</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="project-card">
+                  <div class="project-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop"
+                      alt="AI Chatbot"
+                    />
+                    <div class="project-overlay">
+                      <div class="project-links">
+                        <a href="#" class="project-link">
+                          <span>Live Demo</span>
+                        </a>
+                        <a href="#" class="project-link">
+                          <span>Code</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-header">
+                      <span class="project-category">AI/ML</span>
+                      <span class="project-year">2024</span>
+                    </div>
+                    <h3 class="project-title">ChatBot AI</h3>
+                    <p class="project-description">
+                      Intelligent customer service bot with natural language
+                      processing.
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-pill">Python</span>
+                      <span class="tech-pill">OpenAI</span>
+                      <span class="tech-pill">FastAPI</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="project-card">
+                  <div class="project-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+                      alt="Blockchain DApp"
+                    />
+                    <div class="project-overlay">
+                      <div class="project-links">
+                        <a href="#" class="project-link">
+                          <span>Live Demo</span>
+                        </a>
+                        <a href="#" class="project-link">
+                          <span>Code</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-header">
+                      <span class="project-category">Blockchain</span>
+                      <span class="project-year">2023</span>
+                    </div>
+                    <h3 class="project-title">DeFi Exchange</h3>
+                    <p class="project-description">
+                      Decentralized exchange platform with yield farming
+                      capabilities.
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-pill">Solidity</span>
+                      <span class="tech-pill">Web3.js</span>
+                      <span class="tech-pill">React</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="project-card">
+                  <div class="project-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop"
+                      alt="IoT Dashboard"
+                    />
+                    <div class="project-overlay">
+                      <div class="project-links">
+                        <a href="#" class="project-link">
+                          <span>Live Demo</span>
+                        </a>
+                        <a href="#" class="project-link">
+                          <span>Code</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-header">
+                      <span class="project-category">IoT</span>
+                      <span class="project-year">2023</span>
+                    </div>
+                    <h3 class="project-title">Smart Home Hub</h3>
+                    <p class="project-description">
+                      IoT platform for managing smart home devices with
+                      real-time monitoring and automation.
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-pill">Vue.js</span>
+                      <span class="tech-pill">MQTT</span>
+                      <span class="tech-pill">Arduino</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="project-card">
+                  <div class="project-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop"
+                      alt="Game Platform"
+                    />
+                    <div class="project-overlay">
+                      <div class="project-links">
+                        <a href="#" class="project-link">
+                          <span>Live Demo</span>
+                        </a>
+                        <a href="#" class="project-link">
+                          <span>Code</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-header">
+                      <span class="project-category">Gaming</span>
+                      <span class="project-year">2022</span>
+                    </div>
+                    <h3 class="project-title">GameVerse Platform</h3>
+                    <p class="project-description">
+                      Multiplayer gaming platform with real-time chat,
+                      tournaments, and leaderboards.
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-pill">Unity</span>
+                      <span class="tech-pill">Socket.io</span>
+                      <span class="tech-pill">Redis</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="swiper-button-next projects-button-next"></div>
+            <div class="swiper-button-prev projects-button-prev"></div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination projects-pagination"></div>
+          </div>
         </div>
       </section>
 
       <!-- About Section -->
       <section class="about" data-scroll-section id="about">
-        <h2>ABOUT ME</h2>
+        <h2 class="section-title">ABOUT ME</h2>
         <div class="about-content">
           <div class="about-text">
             <p>
@@ -371,10 +755,455 @@
       </section>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+
+    <script type="module">
+      // Simple easing functions
+      const easingUtils = {
+        linear: (t) => t,
+        easeInExpo: (t) => (t === 0 ? 0 : Math.pow(2, 10 * (t - 1))),
+        easeOutExpo: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+        easeInOutExpo: (t) => {
+          if (t === 0) return 0;
+          if (t === 1) return 1;
+          if ((t /= 0.5) < 1) return 0.5 * Math.pow(2, 10 * (t - 1));
+          return 0.5 * (-Math.pow(2, -10 * --t) + 2);
+        },
+      };
+
+      class AHole extends HTMLElement {
+        connectedCallback() {
+          // Elements
+          this.canvas = this.querySelector(".js-canvas");
+          this.ctx = this.canvas.getContext("2d");
+
+          this.discs = [];
+          this.lines = [];
+          this.codeTexts = [
+            // React
+            "const [state, setState] = useState();",
+            "useEffect(() => {}, []);",
+            'import React from "react";',
+            "export default function App() {",
+            "return <Component />;",
+
+            // Angular
+            '@Component({ selector: "app-hero" })',
+            "constructor(private service: Service) {}",
+            "ngOnInit(): void {",
+            "this.data$ = this.service.getData();",
+            '*ngFor="let item of items"',
+
+            // Python
+            "def create_app():",
+            "import pandas as pd",
+            "class UserModel(BaseModel):",
+            "async def get_data():",
+            "return JsonResponse(data)",
+            'if __name__ == "__main__":',
+
+            // JavaScript
+            "async function fetchData() {",
+            "const response = await fetch();",
+            'document.querySelector(".hero")',
+            'console.log("Full-Stack Dev");',
+
+            // .NET
+            "public class ApiController : Controller",
+            "public async Task<IActionResult> Get()",
+            "using Microsoft.AspNetCore.Mvc;",
+            "services.AddScoped<IService>();",
+            "app.UseCors();",
+          ];
+
+          // Init
+          this.setSize();
+          this.setDiscs();
+          this.setLines();
+          this.setCodeParticles();
+
+          this.bindEvents();
+
+          // RAF
+          requestAnimationFrame(this.tick.bind(this));
+        }
+
+        bindEvents() {
+          window.addEventListener("resize", this.onResize.bind(this));
+        }
+
+        onResize() {
+          this.setSize();
+          this.setDiscs();
+          this.setLines();
+          this.setCodeParticles();
+        }
+
+        setSize() {
+          this.rect = this.getBoundingClientRect();
+
+          this.render = {
+            width: this.rect.width,
+            height: this.rect.height,
+            dpi: window.devicePixelRatio,
+          };
+
+          this.canvas.width = this.render.width * this.render.dpi;
+          this.canvas.height = this.render.height * this.render.dpi;
+        }
+
+        setDiscs() {
+          const { width, height } = this.rect;
+
+          this.discs = [];
+
+          this.startDisc = {
+            x: width * 0.5,
+            y: height * 0.45,
+            w: width * 0.75,
+            h: height * 0.7,
+          };
+
+          this.endDisc = {
+            x: width * 0.5,
+            y: height * 0.95,
+            w: 0,
+            h: 0,
+          };
+
+          const totalDiscs = 100;
+
+          let prevBottom = height;
+          this.clip = {};
+
+          for (let i = 0; i < totalDiscs; i++) {
+            const p = i / totalDiscs;
+
+            const disc = this.tweenDisc({
+              p,
+            });
+
+            const bottom = disc.y + disc.h;
+
+            if (bottom <= prevBottom) {
+              this.clip = {
+                disc: { ...disc },
+                i,
+              };
+            }
+
+            prevBottom = bottom;
+
+            this.discs.push(disc);
+          }
+
+          this.clip.path = new Path2D();
+          this.clip.path.ellipse(
+            this.clip.disc.x,
+            this.clip.disc.y,
+            this.clip.disc.w,
+            this.clip.disc.h,
+            0,
+            0,
+            Math.PI * 2
+          );
+          this.clip.path.rect(
+            this.clip.disc.x - this.clip.disc.w,
+            0,
+            this.clip.disc.w * 2,
+            this.clip.disc.y
+          );
+        }
+
+        setLines() {
+          const { width, height } = this.rect;
+
+          this.lines = [];
+
+          const totalLines = 100;
+          const linesAngle = (Math.PI * 2) / totalLines;
+
+          for (let i = 0; i < totalLines; i++) {
+            this.lines.push([]);
+          }
+
+          this.discs.forEach((disc) => {
+            for (let i = 0; i < totalLines; i++) {
+              const angle = i * linesAngle;
+
+              const p = {
+                x: disc.x + Math.cos(angle) * disc.w,
+                y: disc.y + Math.sin(angle) * disc.h,
+              };
+
+              this.lines[i].push(p);
+            }
+          });
+
+          this.linesCanvas = new OffscreenCanvas(width, height);
+          const ctx = this.linesCanvas.getContext("2d");
+
+          this.lines.forEach((line, i) => {
+            ctx.save();
+
+            let lineIsIn = false;
+            line.forEach((p1, j) => {
+              if (j === 0) {
+                return;
+              }
+
+              const p0 = line[j - 1];
+
+              if (
+                !lineIsIn &&
+                (ctx.isPointInPath(this.clip.path, p1.x, p1.y) ||
+                  ctx.isPointInStroke(this.clip.path, p1.x, p1.y))
+              ) {
+                lineIsIn = true;
+              } else if (lineIsIn) {
+                ctx.clip(this.clip.path);
+              }
+
+              ctx.beginPath();
+
+              ctx.moveTo(p0.x, p0.y);
+              ctx.lineTo(p1.x, p1.y);
+
+              ctx.strokeStyle = "rgba(68, 68, 68, 0.3)";
+              ctx.lineWidth = 1;
+              ctx.stroke();
+
+              ctx.closePath();
+            });
+
+            ctx.restore();
+          });
+
+          this.linesCtx = ctx;
+        }
+
+        setCodeParticles() {
+          const { width, height } = this.rect;
+
+          this.particles = [];
+
+          this.particleArea = {
+            sw: this.clip.disc.w * 0.5,
+            ew: this.clip.disc.w * 2,
+            h: height * 0.85,
+          };
+          this.particleArea.sx = (width - this.particleArea.sw) / 2;
+          this.particleArea.ex = (width - this.particleArea.ew) / 2;
+
+          const totalParticles = 25;
+
+          for (let i = 0; i < totalParticles; i++) {
+            const particle = this.initCodeParticle(true);
+            this.particles.push(particle);
+          }
+        }
+
+        initCodeParticle(start = false) {
+          const sx =
+            this.particleArea.sx + this.particleArea.sw * Math.random();
+          const ex =
+            this.particleArea.ex + this.particleArea.ew * Math.random();
+          const dx = ex - sx;
+          const y = start
+            ? this.particleArea.h * Math.random()
+            : this.particleArea.h;
+          const vy = 0.3 + Math.random() * 0.8;
+
+          // Pick random code text
+          const codeText =
+            this.codeTexts[Math.floor(Math.random() * this.codeTexts.length)];
+
+          return {
+            x: sx,
+            sx,
+            dx,
+            y,
+            vy,
+            p: 0,
+            text: codeText,
+            opacity: 0.2 + Math.random() * 0.3,
+            rotation: Math.random() * Math.PI * 2,
+            rotationSpeed: (Math.random() - 0.5) * 0.02,
+            scale: 0.5 + Math.random() * 0.5,
+          };
+        }
+
+        tweenValue(start, end, p, ease = false) {
+          const delta = end - start;
+
+          const easeFn =
+            easingUtils[
+              ease
+                ? "ease" + ease.charAt(0).toUpperCase() + ease.slice(1)
+                : "linear"
+            ];
+
+          return start + delta * easeFn(p);
+        }
+
+        drawDiscs() {
+          const { ctx } = this;
+
+          ctx.strokeStyle = "rgba(68, 68, 68, 0.4)";
+          ctx.lineWidth = 1;
+
+          // Outer disc
+          const outerDisc = this.startDisc;
+
+          ctx.beginPath();
+
+          ctx.ellipse(
+            outerDisc.x,
+            outerDisc.y,
+            outerDisc.w,
+            outerDisc.h,
+            0,
+            0,
+            Math.PI * 2
+          );
+          ctx.stroke();
+
+          ctx.closePath();
+
+          // Discs
+          this.discs.forEach((disc, i) => {
+            if (i % 5 !== 0) {
+              return;
+            }
+
+            if (disc.w < this.clip.disc.w - 5) {
+              ctx.save();
+              ctx.clip(this.clip.path);
+            }
+
+            ctx.beginPath();
+
+            ctx.ellipse(disc.x, disc.y, disc.w, disc.h, 0, 0, Math.PI * 2);
+            ctx.stroke();
+
+            ctx.closePath();
+
+            if (disc.w < this.clip.disc.w - 5) {
+              ctx.restore();
+            }
+          });
+        }
+
+        drawLines() {
+          const { ctx, linesCanvas } = this;
+          ctx.drawImage(linesCanvas, 0, 0);
+        }
+
+        drawCodeParticles() {
+          const { ctx } = this;
+
+          ctx.save();
+          ctx.clip(this.clip.path);
+
+          this.particles.forEach((particle) => {
+            ctx.save();
+
+            ctx.globalAlpha = particle.opacity;
+            ctx.translate(particle.x, particle.y);
+            ctx.rotate(particle.rotation);
+            ctx.scale(particle.scale, particle.scale);
+
+            // Draw code text
+            ctx.font = "10px 'Martian Mono', monospace";
+            ctx.fillStyle = "rgba(0, 255, 100, 0.4)";
+            ctx.shadowColor = "rgba(0, 255, 100, 0.3)";
+            ctx.shadowBlur = 5;
+            ctx.textAlign = "center";
+            ctx.fillText(particle.text, 0, 0);
+
+            ctx.restore();
+          });
+
+          ctx.restore();
+        }
+
+        moveDiscs() {
+          this.discs.forEach((disc) => {
+            disc.p = (disc.p + 0.001) % 1;
+            this.tweenDisc(disc);
+          });
+        }
+
+        moveCodeParticles() {
+          this.particles.forEach((particle) => {
+            particle.p = 1 - particle.y / this.particleArea.h;
+            particle.x = particle.sx + particle.dx * particle.p;
+            particle.y -= particle.vy;
+            particle.rotation += particle.rotationSpeed;
+
+            // Fade in/out based on position
+            if (particle.y > this.particleArea.h * 0.8) {
+              particle.opacity = Math.max(
+                0,
+                (this.particleArea.h - particle.y) / (this.particleArea.h * 0.2)
+              );
+            } else if (particle.y < this.particleArea.h * 0.2) {
+              particle.opacity = Math.min(
+                0.8,
+                particle.y / (this.particleArea.h * 0.2)
+              );
+            }
+
+            if (particle.y < -50) {
+              // Reset particle
+              const newParticle = this.initCodeParticle();
+              Object.assign(particle, newParticle);
+            }
+          });
+        }
+
+        tweenDisc(disc) {
+          disc.x = this.tweenValue(this.startDisc.x, this.endDisc.x, disc.p);
+          disc.y = this.tweenValue(
+            this.startDisc.y,
+            this.endDisc.y,
+            disc.p,
+            "inExpo"
+          );
+
+          disc.w = this.tweenValue(this.startDisc.w, this.endDisc.w, disc.p);
+          disc.h = this.tweenValue(this.startDisc.h, this.endDisc.h, disc.p);
+
+          return disc;
+        }
+
+        tick(time) {
+          const { ctx } = this;
+
+          ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+          ctx.save();
+          ctx.scale(this.render.dpi, this.render.dpi);
+
+          this.moveDiscs();
+          this.moveCodeParticles();
+
+          this.drawDiscs();
+          this.drawLines();
+          this.drawCodeParticles();
+
+          ctx.restore();
+
+          requestAnimationFrame(this.tick.bind(this));
+        }
+      }
+
+      customElements.define("a-hole", AHole);
+    </script>
   </body>
 </html>
