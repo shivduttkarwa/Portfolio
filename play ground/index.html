@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shivdutt | Full-Stack Developer</title>
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
-    />
-    <link
       href="https://fonts.cdnfonts.com/css/neue-montreal"
       rel="stylesheet"
     />
@@ -66,7 +62,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body data-barba="wrapper">
+  <body>
     <!-- Hamburger Menu Button -->
     <button class="hamburger-menu" id="hamburger">
       <span class="hamburger-line"></span>
@@ -104,9 +100,7 @@
           <div class="nav-item">
             <span class="nav-number">03</span>
             <a href="#testimonials" class="nav-link">
-              <span class="nav-text" data-text="TESTIMONIALS"
-                >TESTIMONIALS</span
-              >
+              <span class="nav-text" data-text="TESTIMONIALS">TESTIMONIALS</span>
               <span class="nav-subtitle">Client Reviews</span>
             </a>
           </div>
@@ -173,377 +167,490 @@
       </div>
     </div>
 
-    <div class="scroll-container" data-scroll-container>
-      <!-- Hero Section -->
-      <section class="hero" data-scroll-section>
-        <a-hole>
-          <canvas class="js-canvas"></canvas>
-        </a-hole>
+    <!-- Main Content Sections with GSAP Scroll -->
+    <section class="outer-section">
+      <div class="outer">
+        <div class="inner">
+          <div class="bg home">
+            <!-- Hero Section -->
+            <div class="hero">
+              <a-hole>
+                <canvas class="js-canvas"></canvas>
+              </a-hole>
 
-        <!-- Hero Image on Left -->
-        <div class="hero-image-wrapper">
-          <img src="img/1111.png" alt="Shivdutt" class="hero-image" />
-        </div>
+              <!-- Hero Image on Left -->
+              <div class="hero-image-wrapper">
+                <img src="img/1111.png" alt="Shivdutt" class="hero-image" />
+              </div>
 
-        <!-- Hero Content on Right -->
-        <div class="hero-content">
-          <h1 class="hero-title">
-            <span>FULL-STACK</span>
-            <span>DEVELOPER</span>
-          </h1>
-          <p class="hero-subtitle">Building robust digital experiences</p>
-        </div>
+              <!-- Hero Content on Right -->
+              <div class="hero-content">
+                <h1 class="hero-title">
+                  <span>FULL-STACK</span>
+                  <span>DEVELOPER</span>
+                </h1>
+                <p class="hero-subtitle">Building robust digital experiences</p>
+              </div>
 
-        <div class="scroll-hint" data-scroll data-scroll-speed="0.2">
-          <span>SCROLL</span>
-          <div class="hint-line"></div>
-        </div>
-      </section>
-
-      <!-- Services Section -->
-      <section class="services" data-scroll-section id="services">
-        <div class="services-container">
-          <div class="services-header">
-            <h2 class="services-title">SERVICES</h2>
-            <p class="services-subtitle">
-              Crafting digital excellence across the full stack
-            </p>
-          </div>
-
-          <div class="services-grid">
-            <div class="service-card" data-service="frontend">
-              <div class="service-icon">
-                <span class="service-number">01</span>
+              <div class="scroll-hint">
+                <span>SCROLL</span>
+                <div class="hint-line"></div>
               </div>
-              <div class="service-content">
-                <h3 class="service-title">Frontend Development</h3>
-                <p class="service-description">
-                  Modern, responsive interfaces built with cutting-edge
-                  frameworks
-                </p>
-                <div class="service-tech">
-                  <span class="tech-tag">React</span>
-                  <span class="tech-tag">Next.js</span>
-                  <span class="tech-tag">TypeScript</span>
-                  <span class="tech-tag">Tailwind</span>
-                </div>
-              </div>
-              <div class="service-arrow">→</div>
-            </div>
-
-            <div class="service-card" data-service="backend">
-              <div class="service-icon">
-                <span class="service-number">02</span>
-              </div>
-              <div class="service-content">
-                <h3 class="service-title">Backend Development</h3>
-                <p class="service-description">
-                  Scalable server architectures and robust API solutions
-                </p>
-                <div class="service-tech">
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">.NET</span>
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">PostgreSQL</span>
-                </div>
-              </div>
-              <div class="service-arrow">→</div>
-            </div>
-
-            <div class="service-card" data-service="cloud">
-              <div class="service-icon">
-                <span class="service-number">03</span>
-              </div>
-              <div class="service-content">
-                <h3 class="service-title">Cloud Solutions</h3>
-                <p class="service-description">
-                  Deployment, scaling, and infrastructure optimization
-                </p>
-                <div class="service-tech">
-                  <span class="tech-tag">AWS</span>
-                  <span class="tech-tag">Docker</span>
-                  <span class="tech-tag">Kubernetes</span>
-                  <span class="tech-tag">Terraform</span>
-                </div>
-              </div>
-              <div class="service-arrow">→</div>
-            </div>
-
-            <div class="service-card" data-service="mobile">
-              <div class="service-icon">
-                <span class="service-number">04</span>
-              </div>
-              <div class="service-content">
-                <h3 class="service-title">Mobile Development</h3>
-                <p class="service-description">
-                  Cross-platform apps with native performance
-                </p>
-                <div class="service-tech">
-                  <span class="tech-tag">React Native</span>
-                  <span class="tech-tag">Flutter</span>
-                  <span class="tech-tag">iOS</span>
-                  <span class="tech-tag">Android</span>
-                </div>
-              </div>
-              <div class="service-arrow">→</div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Recent Work Section -->
-      <section class="recent-work-section" data-scroll-section id="work">
-        <div class="work-container">
-          <div class="work-header">
-            <h2 class="work-title">RECENT WORK</h2>
-            <p class="work-subtitle">
-              Showcasing my latest projects and creative solutions
-            </p>
-          </div>
-
-          <div class="blog-slider swiper">
-            <div class="blog-slider__wrp swiper-wrapper">
-              <div class="blog-slider__item swiper-slide">
-                <div class="blog-slider__img">
-                  <img
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
-                    alt="E-commerce Platform"
-                  />
+    <section class="outer-section">
+      <div class="outer">
+        <div class="inner">
+          <div class="bg projects">
+            <!-- Services Section -->
+            <div class="services" id="services">
+              <div class="services-container">
+                <div class="services-header">
+                  <h2 class="services-title">SERVICES</h2>
+                  <p class="services-subtitle">
+                    Crafting digital excellence across the full stack
+                  </p>
                 </div>
-                <div class="blog-slider__content">
-                  <span class="blog-slider__code">Full-Stack Development</span>
-                  <div class="blog-slider__title">E-commerce Platform</div>
-                  <div class="blog-slider__text">
-                    Complete e-commerce solution with payment integration,
-                    inventory management, and real-time analytics built with
-                    React and Node.js.
+
+                <div class="services-grid">
+                  <div class="service-card" data-service="frontend">
+                    <div class="service-icon">
+                      <span class="service-number">01</span>
+                    </div>
+                    <div class="service-content">
+                      <h3 class="service-title">Frontend Development</h3>
+                      <p class="service-description">
+                        Modern, responsive interfaces built with cutting-edge
+                        frameworks
+                      </p>
+                      <div class="service-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind</span>
+                      </div>
+                    </div>
+                    <div class="service-arrow">→</div>
                   </div>
-                  <a href="#" class="blog-slider__button">VIEW PROJECT</a>
-                </div>
-              </div>
 
-              <div class="blog-slider__item swiper-slide">
-                <div class="blog-slider__img">
-                  <img
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
-                    alt="Analytics Dashboard"
-                  />
-                </div>
-                <div class="blog-slider__content">
-                  <span class="blog-slider__code">Data Visualization</span>
-                  <div class="blog-slider__title">Analytics Dashboard</div>
-                  <div class="blog-slider__text">
-                    Real-time data visualization dashboard with interactive
-                    charts and customizable widgets using D3.js and Vue.js.
+                  <div class="service-card" data-service="backend">
+                    <div class="service-icon">
+                      <span class="service-number">02</span>
+                    </div>
+                    <div class="service-content">
+                      <h3 class="service-title">Backend Development</h3>
+                      <p class="service-description">
+                        Scalable server architectures and robust API solutions
+                      </p>
+                      <div class="service-tech">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">.NET</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                      </div>
+                    </div>
+                    <div class="service-arrow">→</div>
                   </div>
-                  <a href="#" class="blog-slider__button">VIEW PROJECT</a>
-                </div>
-              </div>
 
-              <div class="blog-slider__item swiper-slide">
-                <div class="blog-slider__img">
-                  <img
-                    src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop"
-                    alt="Mobile Banking App"
-                  />
-                </div>
-                <div class="blog-slider__content">
-                  <span class="blog-slider__code">Mobile Development</span>
-                  <div class="blog-slider__title">Mobile Banking App</div>
-                  <div class="blog-slider__text">
-                    Secure mobile banking application with biometric
-                    authentication and real-time transactions built with React
-                    Native.
+                  <div class="service-card" data-service="cloud">
+                    <div class="service-icon">
+                      <span class="service-number">03</span>
+                    </div>
+                    <div class="service-content">
+                      <h3 class="service-title">Cloud Solutions</h3>
+                      <p class="service-description">
+                        Deployment, scaling, and infrastructure optimization
+                      </p>
+                      <div class="service-tech">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Terraform</span>
+                      </div>
+                    </div>
+                    <div class="service-arrow">→</div>
                   </div>
-                  <a href="#" class="blog-slider__button">VIEW PROJECT</a>
-                </div>
-              </div>
 
-              <div class="blog-slider__item swiper-slide">
-                <div class="blog-slider__img">
-                  <img
-                    src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop"
-                    alt="AI Content Platform"
-                  />
-                </div>
-                <div class="blog-slider__content">
-                  <span class="blog-slider__code">AI & Machine Learning</span>
-                  <div class="blog-slider__title">AI Content Platform</div>
-                  <div class="blog-slider__text">
-                    AI-powered content generation platform with natural language
-                    processing and custom model training using Python and
-                    TensorFlow.
+                  <div class="service-card" data-service="mobile">
+                    <div class="service-icon">
+                      <span class="service-number">04</span>
+                    </div>
+                    <div class="service-content">
+                      <h3 class="service-title">Mobile Development</h3>
+                      <p class="service-description">
+                        Cross-platform apps with native performance
+                      </p>
+                      <div class="service-tech">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">iOS</span>
+                        <span class="tech-tag">Android</span>
+                      </div>
+                    </div>
+                    <div class="service-arrow">→</div>
                   </div>
-                  <a href="#" class="blog-slider__button">VIEW PROJECT</a>
                 </div>
               </div>
             </div>
-            <div class="blog-slider__pagination"></div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Testimonials Section with Swiper -->
-      <section class="testimonials" data-scroll-section id="testimonials">
-        <h2 class="section-title">TESTIMONIALS</h2>
-        <div class="swiper testimonials-swiper">
-          <div class="swiper-wrapper">
-            <!-- Testimonial Slides (10 total) -->
-            <div class="swiper-slide">
-              <blockquote>
-                "Shivdutt delivered our e-commerce platform 2 weeks ahead of
-                schedule with zero bugs. His attention to detail is unmatched."
-              </blockquote>
-              <div class="client-info">
-                <p>Sarah Johnson</p>
-                <p>CEO, TechCorp</p>
+    <section class="outer-section">
+      <div class="outer">
+        <div class="inner">
+          <div class="bg testimonials">
+            <!-- Testimonials Section with Swiper -->
+            <div class="testimonials" id="testimonials">
+              <h2 class="section-title">TESTIMONIALS</h2>
+              <div class="swiper testimonials-swiper">
+                <div class="swiper-wrapper">
+                  <!-- Testimonial Slides (10 total) -->
+                  <div class="swiper-slide">
+                    <blockquote>
+                      "Shivdutt delivered our e-commerce platform 2 weeks ahead of
+                      schedule with zero bugs. His attention to detail is unmatched."
+                    </blockquote>
+                    <div class="client-info">
+                      <p>Sarah Johnson</p>
+                      <p>CEO, TechCorp</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <blockquote>
+                      "The mobile app Shivdutt developed increased our user retention
+                      by 40%. His technical expertise is outstanding."
+                    </blockquote>
+                    <div class="client-info">
+                      <p>Michael Chen</p>
+                      <p>CTO, AppVantage</p>
+                    </div>
+                  </div>
+                  <!-- Additional slides would go here -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
               </div>
             </div>
-            <div class="swiper-slide">
-              <blockquote>
-                "The mobile app Shivdutt developed increased our user retention
-                by 40%. His technical expertise is outstanding."
-              </blockquote>
-              <div class="client-info">
-                <p>Michael Chen</p>
-                <p>CTO, AppVantage</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <blockquote>
-                "Shivdutt delivered our e-commerce platform 2 weeks ahead of
-                schedule with zero bugs. His attention to detail is unmatched."
-              </blockquote>
-              <div class="client-info">
-                <p>Sarah Johnson</p>
-                <p>CEO, TechCorp</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <blockquote>
-                "The mobile app Shivdutt developed increased our user retention
-                by 40%. His technical expertise is outstanding."
-              </blockquote>
-              <div class="client-info">
-                <p>Michael Chen</p>
-                <p>CTO, AppVantage</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <blockquote>
-                "Shivdutt delivered our e-commerce platform 2 weeks ahead of
-                schedule with zero bugs. His attention to detail is unmatched."
-              </blockquote>
-              <div class="client-info">
-                <p>Sarah Johnson</p>
-                <p>CEO, TechCorp</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <blockquote>
-                "The mobile app Shivdutt developed increased our user retention
-                by 40%. His technical expertise is outstanding."
-              </blockquote>
-              <div class="client-info">
-                <p>Michael Chen</p>
-                <p>CTO, AppVantage</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <blockquote>
-                "Shivdutt delivered our e-commerce platform 2 weeks ahead of
-                schedule with zero bugs. His attention to detail is unmatched."
-              </blockquote>
-              <div class="client-info">
-                <p>Sarah Johnson</p>
-                <p>CEO, TechCorp</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <blockquote>
-                "The mobile app Shivdutt developed increased our user retention
-                by 40%. His technical expertise is outstanding."
-              </blockquote>
-              <div class="client-info">
-                <p>Michael Chen</p>
-                <p>CTO, AppVantage</p>
-              </div>
-            </div>
-            <!-- Add 8 more testimonials following same structure -->
           </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- About Section -->
-      <section class="about" data-scroll-section id="about">
-        <h2 class="section-title">ABOUT ME</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              I'm Shivdutt, a full-stack developer with 5+ years of experience
-              building scalable web applications.
-            </p>
-            <p>
-              My expertise spans from UI design to cloud infrastructure,
-              ensuring end-to-end project success.
-            </p>
-          </div>
-          <div class="skills">
-            <div class="skills-column">
-              <h4>Frontend</h4>
-              <ul>
-                <li>React.js</li>
-                <li>TypeScript</li>
-                <li>Next.js</li>
-                <li>GSAP</li>
-                <li>Three.js</li>
-              </ul>
-            </div>
-            <div class="skills-column">
-              <h4>Backend</h4>
-              <ul>
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>GraphQL</li>
-                <li>PostgreSQL</li>
-                <li>MongoDB</li>
-              </ul>
+    <section class="outer-section">
+      <div class="outer">
+        <div class="inner">
+          <div class="bg about">
+            <!-- About Section -->
+            <div class="about" id="about">
+              <h2 class="section-title">ABOUT ME</h2>
+              <div class="about-content">
+                <div class="about-text">
+                  <p>
+                    I'm Shivdutt, a full-stack developer with 5+ years of experience
+                    building scalable web applications.
+                  </p>
+                  <p>
+                    My expertise spans from UI design to cloud infrastructure,
+                    ensuring end-to-end project success.
+                  </p>
+                </div>
+                <div class="skills">
+                  <div class="skills-column">
+                    <h4>Frontend</h4>
+                    <ul>
+                      <li>React.js</li>
+                      <li>TypeScript</li>
+                      <li>Next.js</li>
+                      <li>GSAP</li>
+                      <li>Three.js</li>
+                    </ul>
+                  </div>
+                  <div class="skills-column">
+                    <h4>Backend</h4>
+                    <ul>
+                      <li>Node.js</li>
+                      <li>Express</li>
+                      <li>GraphQL</li>
+                      <li>PostgreSQL</li>
+                      <li>MongoDB</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Contact Section -->
-      <section class="contact" data-scroll-section id="contact">
-        <h2>GET IN TOUCH</h2>
-        <div class="contact-content">
-          <a href="mailto:hello@Shivduttkarwa@gmail.com" class="contact-email"
-            >shivduttkarwa@gmail.com</a
-          >
-          <div class="contact-links">
-            <a href="#" target="_blank">GitHub</a>
-            <a href="#" target="_blank">LinkedIn</a>
-            <a href="#" target="_blank">Twitter</a>
-            <a href="#" target="_blank">Resume</a>
+    <section class="outer-section">
+      <div class="outer">
+        <div class="inner">
+          <div class="bg contact">
+            <!-- Contact Section -->
+            <div class="contact" id="contact">
+              <h2>GET IN TOUCH</h2>
+              <div class="contact-content">
+                <a href="mailto:hello@Shivduttkarwa@gmail.com" class="contact-email"
+                  >shivduttkarwa@gmail.com</a
+                >
+                <div class="contact-links">
+                  <a href="#" target="_blank">GitHub</a>
+                  <a href="#" target="_blank">LinkedIn</a>
+                  <a href="#" target="_blank">Twitter</a>
+                  <a href="#" target="_blank">Resume</a>
+                </div>
+              </div>
+              <footer>
+                <p>© 2025 Shivdutt. All rights reserved.</p>
+                <p>Built with passion</p>
+              </footer>
+            </div>
           </div>
         </div>
-        <footer>
-          <p>© 2025 Shivdutt. All rights reserved.</p>
-          <p>Built with passion</p>
-        </footer>
-      </section>
-    </div>
+      </div>
+    </section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+
+    <script>
+      // GSAP Scroll Animation
+      gsap.registerPlugin(Observer);
+
+      let sections = document.querySelectorAll(".outer-section"),
+        background = document.querySelectorAll(".bg"),
+        outerWrappers = gsap.utils.toArray(".outer"),
+        innerWrappers = gsap.utils.toArray(".inner"),
+        currentIndex = -1,
+        wrap = gsap.utils.wrap(0, sections.length - 1),
+        animating;
+
+      let clamp = gsap.utils.clamp(0, sections.length - 1);
+
+      gsap.set(outerWrappers, { yPercent: 100 });
+      gsap.set(innerWrappers, { yPercent: -100 });
+
+      function gotoSection(index, direction) {
+        index = clamp(index); // make sure it's valid
+
+        // If they are the same, it's either the first or last slide
+        if (index === currentIndex) {
+          return;
+        }
+
+        animating = true;
+        let fromTop = direction === -1,
+          dFactor = fromTop ? -1 : 1,
+          tl = gsap.timeline({
+            defaults: { duration: 1.25, ease: "power1.inOut" },
+            onComplete: () => (animating = false),
+          });
+        if (currentIndex >= 0) {
+          // The first time this function runs, current is -1
+          gsap.set(sections[currentIndex], { zIndex: 0 });
+          tl.to(background[currentIndex], { yPercent: -15 * dFactor }).set(
+            sections[currentIndex],
+            { autoAlpha: 0 }
+          );
+        }
+        gsap.set(sections[index], { autoAlpha: 1, zIndex: 1 });
+        tl.fromTo(
+          [outerWrappers[index], innerWrappers[index]],
+          { yPercent: (i) => (i ? -100 * dFactor : 100 * dFactor) },
+          { yPercent: 0 },
+          0
+        ).fromTo(background[index], { yPercent: 15 * dFactor }, { yPercent: 0 }, 0);
+
+        currentIndex = index;
+        return tl;
+      }
+
+      Observer.create({
+        type: "wheel, pointer",
+        wheelSpeed: -1,
+        onDown: () => {
+          !animating && gotoSection(currentIndex - 1, -1);
+        },
+        onUp: () => {
+          !animating && gotoSection(currentIndex + 1, 1);
+        },
+        tolerance: 200,
+        allowClicks: true,
+        preventDefault: true,
+      });
+
+      gotoSection(0, 1).progress(1);
+
+      // Initialize Testimonials Swiper
+      const testimonialsSwiper = new Swiper(".testimonials-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 50,
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 1.2,
+          },
+        },
+      });
+
+      // Hero Image Animation
+      gsap.from(".hero-image-wrapper", {
+        x: -50,
+        opacity: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 0.4,
+      });
+
+      // Text Animation
+      const heroTitle = document.querySelector(".hero-title");
+      const splitTitle = new SplitType(heroTitle, { types: "chars" });
+
+      gsap.from(splitTitle.chars, {
+        y: 100,
+        opacity: 0,
+        stagger: 0.05,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+
+      // Premium Split Screen Menu with Advanced Effects
+      const hamburger = document.getElementById("hamburger");
+      const fullpageMenu = document.getElementById("fullpage-menu");
+      const menuCursor = document.getElementById("menu-cursor");
+      const cursorCore = document.querySelector(".cursor-core");
+      const cursorTrail = document.querySelector(".cursor-trail");
+
+      let mouseX = 0,
+        mouseY = 0;
+      let cursorX = 0,
+        cursorY = 0;
+
+      // Smooth cursor following
+      function updateCursor() {
+        cursorX += (mouseX - cursorX) * 0.1;
+        cursorY += (mouseY - cursorY) * 0.1;
+
+        if (menuCursor) {
+          menuCursor.style.left = cursorX + "px";
+          menuCursor.style.top = cursorY + "px";
+        }
+
+        requestAnimationFrame(updateCursor);
+      }
+
+      // Mouse tracking
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      // Cursor interaction with elements
+      document
+        .querySelectorAll(".nav-link, .contact-btn, .social-link, .menu-logo")
+        .forEach((element) => {
+          element.addEventListener("mouseenter", () => {
+            if (cursorTrail) {
+              cursorTrail.style.transform = "translate(-50%, -50%) scale(1.2)";
+              cursorTrail.style.borderColor = "rgba(255, 94, 26, 0.6)";
+              cursorTrail.style.borderWidth = "2px";
+            }
+            if (cursorCore) {
+              cursorCore.style.transform = "translate(-50%, -50%) scale(1.2)";
+            }
+          });
+
+          element.addEventListener("mouseleave", () => {
+            if (cursorTrail) {
+              cursorTrail.style.transform = "translate(-50%, -50%) scale(1)";
+              cursorTrail.style.borderColor = "rgba(255, 94, 26, 0.2)";
+              cursorTrail.style.borderWidth = "1px";
+            }
+            if (cursorCore) {
+              cursorCore.style.transform = "translate(-50%, -50%) scale(1)";
+            }
+          });
+        });
+
+      updateCursor();
+
+      if (hamburger && fullpageMenu) {
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          fullpageMenu.classList.toggle("active");
+          document.body.style.overflow = fullpageMenu.classList.contains("active")
+            ? "hidden"
+            : "";
+
+          // Add entrance sound effect simulation
+          if (fullpageMenu.classList.contains("active")) {
+            setTimeout(() => {
+              document.querySelectorAll(".nav-item").forEach((item, index) => {
+                setTimeout(() => {
+                  item.style.transform = "translateY(0) rotateX(0deg) scale(1.02)";
+                  setTimeout(() => {
+                    item.style.transform = "translateY(0) rotateX(0deg) scale(1)";
+                  }, 100);
+                }, index * 100);
+              });
+            }, 800);
+          }
+        });
+      }
+
+      // Close menu when clicking navigation links and handle smooth scrolling
+      if (hamburger && fullpageMenu) {
+        document.querySelectorAll(".fullpage-menu .nav-link").forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            // Close menu
+            hamburger.classList.remove("active");
+            fullpageMenu.classList.remove("active");
+            document.body.style.overflow = "";
+
+            // Get target section
+            const targetId = link.getAttribute("href");
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+              // Scroll to section using GSAP
+              gsap.to(window, {
+                scrollTo: { y: targetSection, autoKill: false },
+                duration: 1,
+                ease: "power2.inOut"
+              });
+            }
+          });
+        });
+      }
+    </script>
 
     <script type="module">
       // Simple easing functions

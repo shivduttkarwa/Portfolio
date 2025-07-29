@@ -3,7 +3,10 @@
     "allow": [
       "Bash(python:*)",
       "WebFetch(domain:www.karim-saab.com)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(ls:*)",
+      "WebFetch(domain:dziukiewicz.com)",
+      "WebFetch(domain:codepen.io)"
     ],
     "deny": []
   }
