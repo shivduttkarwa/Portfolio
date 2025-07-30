@@ -27,6 +27,10 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
       rel="stylesheet"
     />
@@ -67,111 +71,225 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-barba="wrapper">
-    <!-- Hamburger Menu Button -->
-    <button class="hamburger-menu" id="hamburger">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
+    <!-- ====================  MENU STRUCTURE ==================== -->
 
-    <!-- Interactive Cursor with Particles -->
-    <div class="menu-cursor" id="menu-cursor">
-      <div class="cursor-core"></div>
-      <div class="cursor-trail"></div>
+    <div id="toggle-btn" class="btn">
+      <!-- Animated morphing circles around hamburger -->
+      <div class="btn-outline btn-outline-1"></div>
+      <div class="btn-outline btn-outline-2"></div>
+      <!-- Hamburger icon that transforms to X -->
+      <div id="hamburger">
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+      </div>
     </div>
 
-    <!-- Split Screen Full Page Menu -->
-    <div class="fullpage-menu" id="fullpage-menu">
-      <div class="menu-background"></div>
+    <!-- SVG Overlay that morphs during animation -->
+    <div class="overlay">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <!-- Enhanced curved path for better moon effect -->
+        <path d="M0 2S175 1 500 1s500 1 500 1V0H0Z"></path>
+      </svg>
+    </div>
 
-      <!-- Left Half - Navigation -->
-      <div class="menu-left">
-        <nav class="main-navigation">
-          <div class="nav-item">
-            <span class="nav-number">01</span>
-            <a href="#work" class="nav-link">
-              <span class="nav-text" data-text="WORK">WORK</span>
-              <span class="nav-subtitle">Selected Projects</span>
-            </a>
+    <!-- Full Screen Menu Container -->
+    <div class="menu">
+      <!-- Primary navigation items (main sections) -->
+      <div class="primary-menu">
+        <div class="menu-container">
+          <div class="wrapper">
+            <!-- Menu items that slide up from bottom with stagger animation -->
+            <div class="menu-item modern-menu-item menu-item-home">
+              <div class="menu-line"></div>
+              <a href="#hero">
+                <span class="menu-number">00.</span>
+                <div class="menu-arrow">
+                  <svg width="40" height="25" viewBox="0 0 40 25">
+                    <path
+                      class="arrow-line"
+                      d="M2 25 L2 5 L25 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                    />
+                    <polygon
+                      class="arrow-tip"
+                      points="25,1 37,5 25,9"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <span class="menu-text">HOME</span>
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
+
+            <div class="menu-item modern-menu-item menu-item-services">
+              <div class="menu-line"></div>
+              <a href="#services">
+                <span class="menu-number">01.</span>
+                <div class="menu-arrow">
+                  <svg width="40" height="25" viewBox="0 0 40 25">
+                    <path
+                      class="arrow-line"
+                      d="M2 25 L2 5 L25 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                    />
+                    <polygon
+                      class="arrow-tip"
+                      points="25,1 37,5 25,9"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <span class="menu-text">SERVICES</span>
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
+
+            <div class="menu-item modern-menu-item menu-item-work">
+              <div class="menu-line"></div>
+              <a href="#work">
+                <span class="menu-number">02.</span>
+                <div class="menu-arrow">
+                  <svg width="40" height="25" viewBox="0 0 40 25">
+                    <path
+                      class="arrow-line"
+                      d="M2 25 L2 5 L25 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                    />
+                    <polygon
+                      class="arrow-tip"
+                      points="25,1 37,5 25,9"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <span class="menu-text">WORK</span>
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
+
+            <div class="menu-item modern-menu-item menu-item-testimonials">
+              <div class="menu-line"></div>
+              <a href="#testimonials">
+                <span class="menu-number">03.</span>
+                <div class="menu-arrow">
+                  <svg width="40" height="25" viewBox="0 0 40 25">
+                    <path
+                      class="arrow-line"
+                      d="M2 25 L2 5 L25 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                    />
+                    <polygon
+                      class="arrow-tip"
+                      points="25,1 37,5 25,9"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <span class="menu-text">TESTIMONIALS</span>
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
+
+            <div class="menu-item modern-menu-item menu-item-about">
+              <div class="menu-line"></div>
+              <a href="#about">
+                <span class="menu-number">04.</span>
+                <div class="menu-arrow">
+                  <svg width="40" height="25" viewBox="0 0 40 25">
+                    <path
+                      class="arrow-line"
+                      d="M2 25 L2 5 L25 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                    />
+                    <polygon
+                      class="arrow-tip"
+                      points="25,1 37,5 25,9"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <span class="menu-text">ABOUT</span>
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
           </div>
-          <div class="nav-item">
-            <span class="nav-number">02</span>
-            <a href="#services" class="nav-link">
-              <span class="nav-text" data-text="SERVICES">SERVICES</span>
-              <span class="nav-subtitle">What I Offer</span>
-            </a>
-          </div>
-          <div class="nav-item">
-            <span class="nav-number">03</span>
-            <a href="#testimonials" class="nav-link">
-              <span class="nav-text" data-text="TESTIMONIALS"
-                >TESTIMONIALS</span
-              >
-              <span class="nav-subtitle">Client Reviews</span>
-            </a>
-          </div>
-          <div class="nav-item">
-            <span class="nav-number">04</span>
-            <a href="#about" class="nav-link">
-              <span class="nav-text" data-text="ABOUT">ABOUT</span>
-              <span class="nav-subtitle">My Story</span>
-            </a>
-          </div>
-          <div class="nav-item">
-            <span class="nav-number">05</span>
-            <a href="#contact" class="nav-link">
-              <span class="nav-text" data-text="CONTACT">CONTACT</span>
-              <span class="nav-subtitle">Let's Talk</span>
-            </a>
-          </div>
-        </nav>
+        </div>
       </div>
 
-      <!-- Right Half - Logo & Contact -->
-      <div class="menu-right">
-        <div class="menu-right-content">
-          <!-- Logo Section -->
-          <div class="logo-section">
-            <img src="img/logo.png" alt="Shivdutt Logo" class="menu-logo" />
+      <!-- Secondary menu - Modern Premium Design -->
+      <div class="secondary-menu">
+        <div class="menu-container">
+          <!-- Premium Contact Section -->
+          <div class="contact-section">
+            <!-- Simple Contact Buttons -->
+            <div class="menu-item secondary-menu-item">
+              <a href="#contact" class="premium-btn contact-btn">
+                Contact Me
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
+
+            <div class="menu-item secondary-menu-item">
+              <a
+                href="mailto:shivduttkarwa@gmail.com"
+                class="premium-btn email-btn"
+              >
+                Send Email
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
           </div>
 
-          <!-- Contact Buttons -->
-          <div class="contact-buttons">
-            <a
-              href="mailto:shivduttkarwa@gmail.com"
-              class="contact-btn primary"
-            >
-              <i class="fa fa-envelope"></i>
-              <span>Get In Touch</span>
-            </a>
-            <a href="#" class="contact-btn secondary">
-              <i class="fa fa-download"></i>
-              <span>Download CV</span>
-            </a>
+          <!-- Simple Social Media Section -->
+          <div class="menu-item social-menu-item">
+            <div class="social-content">
+              <div class="social-grid">
+                <a href="#" class="social-card instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-card linkedin">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-card github">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-card twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+            <div class="menu-item-revealer"></div>
           </div>
 
-          <!-- Social Media -->
-          <div class="social-links">
-            <a href="#" class="social-link">
-              <i class="fa fa-github"></i>
-              <span>GitHub</span>
-            </a>
-            <a href="#" class="social-link">
-              <i class="fa fa-linkedin"></i>
-              <span>LinkedIn</span>
-            </a>
-            <a href="#" class="social-link">
-              <i class="fa fa-twitter"></i>
-              <span>Twitter</span>
-            </a>
-            <a href="#" class="social-link">
-              <i class="fa fa-instagram"></i>
-              <span>Instagram</span>
-            </a>
+          <!-- Footer with proper menu-item structure -->
+          <div class="menu-item footer-menu-item">
+            <div class="footer-content">
+              <div class="footer-links">
+                <a href="#" class="footer-link">Privacy</a>
+                <a href="#" class="footer-link">Terms</a>
+                <a href="#" class="footer-link">Cookies</a>
+              </div>
+              <div class="copyright">
+                <p>© 2025 Shivdutt Karwa. All rights reserved.</p>
+              </div>
+            </div>
+            <div class="menu-item-revealer"></div>
           </div>
         </div>
       </div>
     </div>
+    <!-- ==================== END MENU ==================== -->
 
     <div class="scroll-container" data-scroll-container>
       <!-- Hero Section -->
@@ -540,6 +658,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CSSRulePlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>

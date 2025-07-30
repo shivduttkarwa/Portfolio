@@ -6,7 +6,12 @@
       "Bash(git checkout:*)",
       "Bash(ls:*)",
       "WebFetch(domain:dziukiewicz.com)",
-      "WebFetch(domain:codepen.io)"
+      "WebFetch(domain:codepen.io)",
+      "Bash(rm:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(cp:*)",
+      "Bash(sed:*)",
+      "Bash(diff:*)"
     ],
     "deny": []
   }

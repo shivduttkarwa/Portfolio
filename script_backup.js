@@ -1,10 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Fix page refresh issue - ensure we start at hero section
-  if (window.location.hash) {
-    window.history.replaceState(null, null, window.location.pathname);
-  }
-  window.scrollTo(0, 0);
-  
   // Register GSAP plugins
   gsap.registerPlugin(ScrollTrigger);
 
@@ -28,11 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   scroll.on("scroll", () => {
     ScrollTrigger.update();
   });
-
-  // Ensure scroll starts at top after initialization
-  setTimeout(() => {
-    scroll.scrollTo(0, { duration: 0, disableLerp: true });
-  }, 100);
 
   // Momentum Slider Implementation
   class MomentumSlider {
@@ -270,70 +259,57 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
   });
 
-  // ==================== Menu JAVASCRIPT ====================
-
+  // EXACT Original JavaScript Implementation with Error Handling
   const tl = gsap.timeline({
-    paused: true,
+    paused: true
   });
   let path = document.querySelector("path");
   let spanBefore;
-
-  // CSSRulePlugin for controlling pseudo-element styling
+  
   try {
     spanBefore = CSSRulePlugin.getRule("#hamburger .line-2");
     if (spanBefore) {
       gsap.set(spanBefore, { background: "#000" });
     }
-  } catch (e) {
+  } catch(e) {
     console.warn("CSSRulePlugin not available:", e);
   }
-
-  // Initial menu state - hidden by default (matching original)
+  
   gsap.set(".menu", { visibility: "hidden" });
-
+  
   console.log("Menu initialization:", {
     path: path,
-    pathExists: !!path,
-    pathD: path ? path.getAttribute('d') : 'no path',
     spanBefore: spanBefore,
     hamburger: document.getElementById("hamburger"),
-    toggleBtn: document.getElementById("toggle-btn"),
+    toggleBtn: document.getElementById("toggle-btn")
   });
 
-  // Main reveal function - sets up menu toggle functionality
   function revealMenu() {
-    // Build the GSAP timeline for menu animation
     revealMenuItems();
 
     const hamburger = document.getElementById("hamburger");
     const toggleBtn = document.getElementById("toggle-btn");
 
     if (toggleBtn && hamburger) {
-      // Toggle handler - EXACT original with mobile responsiveness added
       const handleToggle = (e) => {
         e.preventDefault();
         console.log("Menu button clicked!");
         hamburger.classList.toggle("active");
         const isReversed = !tl.reversed();
         tl.reversed(isReversed);
-
-        // Mobile responsiveness additions (not in original)
+        
+        // Prevent body scroll when menu is open
         if (isReversed) {
-          // Menu closing
           document.body.style.overflow = "";
-          document.body.classList.remove("menu-open");
         } else {
-          // Menu opening
           document.body.style.overflow = "hidden";
-          document.body.classList.add("menu-open");
         }
-
+        
         console.log("Animation direction:", isReversed ? "reverse" : "forward");
       };
-
-      // Event listeners for both click and touch
-      toggleBtn.addEventListener("click", handleToggle);
-      toggleBtn.addEventListener("touchend", handleToggle);
+      
+      toggleBtn.addEventListener('click', handleToggle);
+      toggleBtn.addEventListener('touchend', handleToggle);
       console.log("Click and touch handlers attached successfully");
     } else {
       console.error("Elements not found:", { toggleBtn, hamburger });
@@ -341,97 +317,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   revealMenu();
 
-  // Add menu link functionality to close menu and scroll to sections
-  function setupMenuLinks() {
-    const menuLinks = document.querySelectorAll(".menu-item a");
-
-    menuLinks.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        // Get the href attribute to determine the target section
-        const href = link.getAttribute("href");
-
-        // Close the menu first
-        const hamburger = document.getElementById("hamburger");
-        if (hamburger && hamburger.classList.contains("active")) {
-          hamburger.classList.remove("active");
-          tl.reverse();
-          document.body.style.overflow = "";
-          document.body.classList.remove("menu-open");
-
-          // Wait for menu animation to complete
-          setTimeout(() => {
-            // Menu will be hidden by GSAP animation
-          }, 1000);
-        }
-
-        // Wait for menu animation to complete, then scroll to section
-        setTimeout(() => {
-          if (href && href.startsWith("#")) {
-            const targetSection = document.querySelector(href);
-            if (targetSection) {
-              // Use locomotive scroll for smooth scrolling
-              if (scroll) {
-                scroll.scrollTo(targetSection);
-              } else {
-                // Fallback to native smooth scroll
-                targetSection.scrollIntoView({ behavior: "smooth" });
-              }
-            }
-          } else if (href && href !== "#") {
-            // For external links or other pages
-            window.location.href = href;
-          }
-        }, 800); // Wait for menu close animation to complete
-      });
-    });
-  }
-
-  // Initialize menu links after menu setup
-  setupMenuLinks();
-
-  // EXACT Original CodePen GSAP Timeline Animation
   function revealMenuItems() {
-    // Optimized paths for full screen coverage with pronounced curve
-    const start = "M0 700S100 100 500 100s400 600 1000 700V0H0Z";
-    const end = "M0 1000S100 1000 500 1000s500 1000 1000 1000V0H0Z";
+    const start = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
+    const end = "M0, 1005S175, 995, 500, 995s500, 5, 500, 5V0H0Z";
 
     const power2 = "power2.inout";
 
-    // Animate hamburger button position and styling
     tl.to("#hamburger", 1.25, {
       marginTop: "-5px",
       x: -40,
       y: 40,
-      ease: power2,
+      ease: power2
     });
-
-    // Change hamburger line colors to white
     tl.to(
       "#hamburger .line",
       1,
       {
         background: "#fff",
-        ease: power2,
+        ease: power2
       },
       "<"
     );
-
-    // Change pseudo element color (CSSRulePlugin)
     if (spanBefore) {
       tl.to(
         spanBefore,
         1,
         {
           background: "#fff",
-          ease: power2,
+          ease: power2
         },
         "<"
       );
     }
 
-    // Animate button outline circles
     tl.to(
       ".btn .btn-outline",
       1.25,
@@ -441,98 +359,69 @@ document.addEventListener("DOMContentLoaded", () => {
         width: "140px",
         height: "140px",
         border: "1px solid #e2e2dc",
-        ease: power2,
+        ease: power2
       },
       "<"
     );
-
-    // SVG Background Animation - Completes BEFORE menu items
-    tl.to(
-      path,
-      0.8,
-      {
-        attr: {
-          d: start
+    if (path) {
+      tl.to(
+        path,
+        0.8,
+        {
+          attr: {
+            d: start
+          },
+          ease: power2
         },
-        ease: power2
-      },
-      "<"
-    ).to(
-      path,
-      0.8,
+        "<"
+      ).to(
+        path,
+        0.8,
+        {
+          attr: { d: end },
+          ease: power2
+        },
+        "-=0.5"
+      );
+    } else {
+      console.warn("SVG path element not found");
+    }
+
+    tl.to(
+      ".overlay",
+      0.2,
       {
-        attr: { d: end },
-        ease: power2
+        visibility: "visible",
+        opacity: 1,
+        ease: "none",
+        onComplete: () => {
+          document.querySelector(".menu").style.visibility = "visible";
+          document.querySelector(".menu").style.pointerEvents = "all";
+        },
+        onReverseComplete: () => {
+          // Smoother cleanup without delay to prevent flicker\n          const overlay = document.querySelector(\".overlay\");\n          const menu = document.querySelector(\".menu\");\n          \n          if (overlay) {
+            overlay.style.visibility = "hidden";
+            overlay.style.opacity = "0";\n          }\n          if (menu) {
+            menu.style.visibility = "hidden";
+            menu.style.pointerEvents = "none";\n          }\n          document.body.style.overflow = "";
+        }
       },
-      "-=0.5"
+      "-=1.2"
     );
 
-    // Menu appears AFTER background completes (minimal delay)
     tl.to(
-      ".menu",
+      ".menu-item>a",
       0.5,
-      {
-        visibility: "visible"
-      },
-      "-=0.4"  // Reduced delay
-    );
-
-    // Menu items animate AFTER background is fully expanded - Primary menu first
-    tl.to(
-      ".primary-menu .menu-item>a",
-      0.4,
       {
         top: 0,
         ease: "power3.in",
         stagger: {
-          amount: 0.3
+          amount: 0.5
         }
       },
-      "-=0.6"
-    )
-    // First contact button
-    .to(
-      ".contact-btn",
-      0.2,
-      {
-        top: 0,
-        ease: "power3.in"
-      },
-      "-=0.1"
-    )
-    // Second contact button
-    .to(
-      ".email-btn",
-      0.2,
-      {
-        top: 0,
-        ease: "power3.in"
-      },
-      "+=0.02"
-    )
-    // Social section
-    .to(
-      ".menu-item .social-content",
-      0.2,
-      {
-        top: 0,
-        ease: "power3.in"
-      },
-      "+=0.02"
-    )
-    // Footer section
-    .to(
-      ".menu-item .footer-content",
-      0.2,
-      {
-        top: 0,
-        ease: "power3.in"
-      },
-      "+=0.02"
+      "-=1"
     ).reverse();
   }
-
-  // ==================== END EXACT ORIGINAL CODEPEN JAVASCRIPT ====================
 
   // Initialize Particles.js (only if particles-js element exists)
   if (document.getElementById("particles-js")) {
