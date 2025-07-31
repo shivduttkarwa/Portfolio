@@ -491,6 +491,16 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       "-=0.6"
     )
+      // Secondary menu background image
+      .to(
+        ".secondary-menu-bg",
+        0.3,
+        {
+          top: 0,
+          ease: "power3.in",
+        },
+        "-=0.2"
+      )
       // First contact button
       .to(
         ".contact-btn",
@@ -612,6 +622,323 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "none",
     });
   });
+
+  // ==================== SERVICES SECTION ANIMATIONS ====================
+  
+  // Services card hover animations
+  function initServicesAnimations() {
+    const servicesCards = document.querySelectorAll('.revolution-card');
+    
+    servicesCards.forEach((card, index) => {
+      // Create timeline for each card
+      const cardTl = gsap.timeline({ paused: true });
+      
+      // Card content elements
+      const serviceIcon = card.querySelector('.service-icon-rev');
+      const serviceTitle = card.querySelector('.service-title-rev');
+      const serviceDesc = card.querySelector('.service-desc-rev');
+      const techChips = card.querySelectorAll('.tech-chip');
+      const actionCircle = card.querySelector('.action-circle');
+      
+      // Build hover animation timeline
+      cardTl
+        .to(serviceIcon, {
+          scale: 1.1,
+          rotate: 5,
+          duration: 0.3,
+          ease: "power2.out"
+        })
+        .to(techChips, {
+          y: -5,
+          scale: 1.05,
+          stagger: 0.05,
+          duration: 0.3,
+          ease: "power2.out"
+        }, "-=0.2")
+        .to(actionCircle, {
+          scale: 1.2,
+          rotate: 90,
+          duration: 0.3,
+          ease: "power2.out"
+        }, "-=0.3");
+      
+      // Mouse enter/leave events
+      card.addEventListener('mouseenter', () => {
+        cardTl.play();
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        cardTl.reverse();
+      });
+      
+      // Add card reveal animation on scroll - but ensure cards are visible by default
+      gsap.set(card, { opacity: 1, y: 0, scale: 1 });
+      
+      gsap.fromTo(card, 
+        {
+          y: 50,
+          opacity: 0.8,
+          scale: 0.95
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.6,
+          ease: "power3.out",
+          delay: index * 0.1,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            end: "bottom 10%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+    });
+    
+    // Terminal window typing animation
+    const terminalContent = document.querySelector('.terminal-content');
+    if (terminalContent) {
+      const codeLines = terminalContent.querySelectorAll('.code-line');
+      
+      gsap.fromTo(codeLines,
+        {
+          opacity: 0,
+          x: -20
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.5,
+          stagger: 0.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: terminalContent,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    }
+    
+    // CTA button pulse animation
+    const ctaButton = document.querySelector('.revolution-btn');
+    if (ctaButton) {
+      gsap.to(ctaButton, {
+        scale: 1.05,
+        duration: 2,
+        ease: "power2.inOut",
+        yoyo: true,
+        repeat: -1
+      });
+    }
+    
+    // Cyberpunk Terminal Background Animations
+    const scanLines = document.querySelectorAll('.floating-shape');
+    const hudElements = document.querySelectorAll('.neural-line');
+    const statusIndicators = document.querySelectorAll('.tech-particle');
+    
+    // Enhanced HUD element interactions
+    hudElements.forEach((element, index) => {
+      // Add subtle glitch effect on scroll
+      ScrollTrigger.create({
+        trigger: element,
+        start: "top 80%",
+        end: "bottom 20%",
+        onEnter: () => {
+          gsap.to(element, {
+            opacity: 0.8,
+            duration: 0.5,
+            ease: "power2.out"
+          });
+        },
+        onLeave: () => {
+          gsap.to(element, {
+            opacity: 0.3,
+            duration: 0.5,
+            ease: "power2.out"
+          });
+        }
+      });
+    });
+    
+    // Status indicator synchronization
+    statusIndicators.forEach((indicator, index) => {
+      gsap.to(indicator, {
+        opacity: 1,
+        scale: 1.1,
+        duration: 0.2,
+        ease: "power2.out",
+        delay: index * 0.3,
+        scrollTrigger: {
+          trigger: ".services-revolution",
+          start: "top 70%",
+          end: "bottom 30%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+    
+    // Terminal glitch effect
+    function createTerminalGlitch() {
+      const terminalWindow = document.querySelector('.terminal-window');
+      if (!terminalWindow) return;
+      
+      setInterval(() => {
+        gsap.to(terminalWindow, {
+          x: Math.random() * 4 - 2,
+          duration: 0.1,
+          ease: "power2.out",
+          yoyo: true,
+          repeat: 1,
+          onComplete: () => {
+            gsap.set(terminalWindow, { x: 0 });
+          }
+        });
+      }, 8000 + Math.random() * 12000);
+    }
+    
+    // Initialize terminal effects
+    createTerminalGlitch();
+    
+    // Cyberpunk mouse interaction
+    const servicesSection = document.querySelector('.services-revolution');
+    if (servicesSection) {
+      servicesSection.addEventListener('mousemove', (e) => {
+        const rect = servicesSection.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        
+        // Create cursor trail effect
+        const trail = document.createElement('div');
+        trail.style.cssText = `
+          position: absolute;
+          width: 2px;
+          height: 2px;
+          background: var(--tertiary);
+          border-radius: 50%;
+          pointer-events: none;
+          z-index: 1;
+          left: ${e.clientX - rect.left}px;
+          top: ${e.clientY - rect.top}px;
+          box-shadow: 0 0 10px var(--tertiary);
+        `;
+        
+        servicesSection.appendChild(trail);
+        
+        gsap.to(trail, {
+          scale: 0,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+          onComplete: () => {
+            if (trail.parentNode) {
+              trail.parentNode.removeChild(trail);
+            }
+          }
+        });
+        
+        // HUD element response to cursor
+        hudElements.forEach((element, index) => {
+          const elementRect = element.getBoundingClientRect();
+          const distance = Math.hypot(
+            e.clientX - (elementRect.left + elementRect.width / 2),
+            e.clientY - (elementRect.top + elementRect.height / 2)
+          );
+          
+          if (distance < 200) {
+            gsap.to(element, {
+              opacity: 0.9,
+              scale: 1.05,
+              duration: 0.3,
+              ease: "power2.out"
+            });
+          } else {
+            gsap.to(element, {
+              opacity: 0.4,
+              scale: 1,
+              duration: 0.5,
+              ease: "power2.out"
+            });
+          }
+        });
+      });
+      
+      servicesSection.addEventListener('mouseleave', () => {
+        // Reset all HUD elements
+        hudElements.forEach((element) => {
+          gsap.to(element, {
+            opacity: 0.4,
+            scale: 1,
+            duration: 0.5,
+            ease: "power2.out"
+          });
+        });
+      });
+    }
+  }
+  
+  // Initialize services animations
+  if (document.querySelector('.services-revolution')) {
+    initServicesAnimations();
+    
+    // Mobile touch interactions for services cards
+    function initMobileTouchInteractions() {
+      const isMobile = window.innerWidth <= 768;
+      
+      if (isMobile) {
+        const servicesCards = document.querySelectorAll('.revolution-card');
+        
+        servicesCards.forEach(card => {
+          // Add touch start animation
+          card.addEventListener('touchstart', (e) => {
+            e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
+            e.currentTarget.style.transition = 'transform 0.2s ease';
+          });
+          
+          // Reset on touch end
+          card.addEventListener('touchend', (e) => {
+            setTimeout(() => {
+              e.currentTarget.style.transform = '';
+              e.currentTarget.style.transition = '';
+            }, 150);
+          });
+          
+          // Handle touch cancel
+          card.addEventListener('touchcancel', (e) => {
+            e.currentTarget.style.transform = '';
+            e.currentTarget.style.transition = '';
+          });
+        });
+        
+        // Mobile-specific animations for CTA button
+        const ctaButton = document.querySelector('.revolution-btn');
+        if (ctaButton) {
+          ctaButton.addEventListener('touchstart', (e) => {
+            e.currentTarget.style.transform = 'scale(0.95)';
+          });
+          
+          ctaButton.addEventListener('touchend', (e) => {
+            setTimeout(() => {
+              e.currentTarget.style.transform = '';
+            }, 100);
+          });
+        }
+      }
+    }
+    
+    // Initialize mobile interactions
+    initMobileTouchInteractions();
+    
+    // Re-initialize on window resize
+    window.addEventListener('resize', () => {
+      initMobileTouchInteractions();
+    });
+  }
+
+  // ==================== END SERVICES SECTION ANIMATIONS ====================
 });
 
 function initProjectCarousel() {
