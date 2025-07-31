@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shivdutt | Full-Stack Developer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/neue-montreal"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/editorial-new"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet" />
+    <link
+      href="https://fonts.cdnfonts.com/css/departure-mono"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/threedpixel" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/3d-isometric" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <!-- Swiper JS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Font Awesome for icons (optional) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-barba="wrapper">
+    <!-- ====================  MENU STRUCTURE ==================== -->
+
+    <div id="toggle-btn" class="btn">
+      <!-- Animated morphing circles around hamburger -->
+      <div class="btn-outline btn-outline-1"></div>
+      <div class="btn-outline btn-outline-2"></div>
+      <!-- Hamburger icon that transforms to X -->
+      <div id="hamburger">
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+      </div>
+    </div>
+
+    <!-- SVG Overlay that morphs during animation -->
+    <div class="overlay">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <!-- Enhanced curved path for better moon effect -->
+        <path d="M0 2S175 1 500 1s500 1 500 1V0H0Z"></path>
+      </svg>
+    </div>
+
+    <!-- Full Screen Menu Container -->
+    <div class="menu">
+      <!-- Primary navigation items (main sections) -->
+      <div class="primary-menu">
+        <div class="menu-container">
+          <div class="wrapper">
+            <!-- Menu items that slide up from bottom with stagger animation -->
+            <div class="menu-item modern-menu-item menu-item-home">
+              <div class="menu-line"></div>
+              <a href="#hero">
+                <span class="menu-number">00.</span>
+                <div class="menu-arrow">
+                  <svg width="40" height="25" viewBox="0 0 40 25">
+                    <path
+                      class="arrow-line"
+                      d="M2 25 L2 5 L25 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                    />
+                    <polygon
+                      class="arrow-tip"
+                      points="25,1 37,5 25,9"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <span class="menu-text">HOME</span>
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
+
+            <div class="menu-item modern-menu-item menu-item-services">
+              <div class="menu-line"></div>
+              <a href="#services">
+                <span class="menu-number">01.</span>
+                <div class="menu-arrow">
+                  <svg width="40" height="25" viewBox="0 0 40 25">
+                    <path
+                      class="arrow-line"
+                      d="M2 25 L2 5 L25 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                    />
+                    <polygon
+                      class="arrow-tip"
+                      points="25,1 37,5 25,9"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <span class="menu-text">SERVICES</span>
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
+
+            <div class="menu-item modern-menu-item menu-item-work">
+              <div class="menu-line"></div>
+              <a href="#work">
+                <span class="menu-number">02.</span>
+                <div class="menu-arrow">
+                  <svg width="40" height="25" viewBox="0 0 40 25">
+                    <path
+                      class="arrow-line"
+                      d="M2 25 L2 5 L25 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                    />
+                    <polygon
+                      class="arrow-tip"
+                      points="25,1 37,5 25,9"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <span class="menu-text">WORK</span>
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
+
+            <div class="menu-item modern-menu-item menu-item-testimonials">
+              <div class="menu-line"></div>
+              <a href="#testimonials">
+                <span class="menu-number">03.</span>
+                <div class="menu-arrow">
+                  <svg width="40" height="25" viewBox="0 0 40 25">
+                    <path
+                      class="arrow-line"
+                      d="M2 25 L2 5 L25 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                    />
+                    <polygon
+                      class="arrow-tip"
+                      points="25,1 37,5 25,9"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <span class="menu-text">TESTIMONIALS</span>
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
+
+            <div class="menu-item modern-menu-item menu-item-about">
+              <div class="menu-line"></div>
+              <a href="#about">
+                <span class="menu-number">04.</span>
+                <div class="menu-arrow">
+                  <svg width="40" height="25" viewBox="0 0 40 25">
+                    <path
+                      class="arrow-line"
+                      d="M2 25 L2 5 L25 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                    />
+                    <polygon
+                      class="arrow-tip"
+                      points="25,1 37,5 25,9"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <span class="menu-text">ABOUT</span>
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary menu - Modern Premium Design -->
+      <div class="secondary-menu">
+        <div class="menu-container">
+          <!-- Premium Contact Section -->
+          <div class="contact-section">
+            <!-- Simple Contact Buttons -->
+            <div class="menu-item secondary-menu-item">
+              <a href="#contact" class="premium-btn contact-btn">
+                Contact Me
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
+
+            <div class="menu-item secondary-menu-item">
+              <a
+                href="mailto:shivduttkarwa@gmail.com"
+                class="premium-btn email-btn"
+              >
+                Send Email
+              </a>
+              <div class="menu-item-revealer"></div>
+            </div>
+          </div>
+
+          <!-- Simple Social Media Section -->
+          <div class="menu-item social-menu-item">
+            <div class="social-content">
+              <div class="social-grid">
+                <a href="#" class="social-card instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-card linkedin">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-card github">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-card twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+            <div class="menu-item-revealer"></div>
+          </div>
+
+          <!-- Footer with proper menu-item structure -->
+          <div class="menu-item footer-menu-item">
+            <div class="footer-content">
+              <div class="footer-links">
+                <a href="#" class="footer-link">Privacy</a>
+                <a href="#" class="footer-link">Terms</a>
+                <a href="#" class="footer-link">Cookies</a>
+              </div>
+              <div class="copyright">
+                <p>© 2025 Shivdutt Karwa. All rights reserved.</p>
+              </div>
+            </div>
+            <div class="menu-item-revealer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ==================== END MENU ==================== -->
+
+    <div class="scroll-container" data-scroll-container>
+      <!-- Hero Section -->
+      <section class="hero" data-scroll-section>
+        <a-hole>
+          <canvas class="js-canvas"></canvas>
+        </a-hole>
+
+        <!-- Hero Image on Left -->
+        <div class="hero-image-wrapper">
+          <img src="../img/1111.png" alt="Shivdutt" class="hero-image" />
+        </div>
+
+        <!-- Hero Content on Right -->
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span>FULL-STACK</span>
+            <span>DEVELOPER</span>
+          </h1>
+          <p class="hero-subtitle">Building robust digital experiences</p>
+        </div>
+
+        <div class="scroll-hint" data-scroll data-scroll-speed="0.2">
+          <span>SCROLL</span>
+          <div class="hint-line"></div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services" data-scroll-section id="services">
+        <div class="services-container">
+          <div class="services-header">
+            <h2 class="services-title">SERVICES</h2>
+            <p class="services-subtitle">
+              Crafting digital excellence across the full stack
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <div class="service-card" data-service="frontend">
+              <div class="service-icon">
+                <span class="service-number">01</span>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Frontend Development</h3>
+                <p class="service-description">
+                  Modern, responsive interfaces built with cutting-edge
+                  frameworks
+                </p>
+                <div class="service-tech">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Next.js</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Tailwind</span>
+                </div>
+              </div>
+              <div class="service-arrow">→</div>
+            </div>
+
+            <div class="service-card" data-service="backend">
+              <div class="service-icon">
+                <span class="service-number">02</span>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Backend Development</h3>
+                <p class="service-description">
+                  Scalable server architectures and robust API solutions
+                </p>
+                <div class="service-tech">
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">.NET</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                </div>
+              </div>
+              <div class="service-arrow">→</div>
+            </div>
+
+            <div class="service-card" data-service="cloud">
+              <div class="service-icon">
+                <span class="service-number">03</span>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Cloud Solutions</h3>
+                <p class="service-description">
+                  Deployment, scaling, and infrastructure optimization
+                </p>
+                <div class="service-tech">
+                  <span class="tech-tag">AWS</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">Kubernetes</span>
+                  <span class="tech-tag">Terraform</span>
+                </div>
+              </div>
+              <div class="service-arrow">→</div>
+            </div>
+
+            <div class="service-card" data-service="mobile">
+              <div class="service-icon">
+                <span class="service-number">04</span>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Mobile Development</h3>
+                <p class="service-description">
+                  Cross-platform apps with native performance
+                </p>
+                <div class="service-tech">
+                  <span class="tech-tag">React Native</span>
+                  <span class="tech-tag">Flutter</span>
+                  <span class="tech-tag">iOS</span>
+                  <span class="tech-tag">Android</span>
+                </div>
+              </div>
+              <div class="service-arrow">→</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Work Section -->
+      <section class="recent-work-section" data-scroll-section id="work">
+        <div class="work-container">
+          <div class="work-header">
+            <h2 class="work-title">RECENT WORK</h2>
+            <p class="work-subtitle">
+              Showcasing my latest projects and creative solutions
+            </p>
+          </div>
+
+          <div class="blog-slider swiper">
+            <div class="blog-slider__wrp swiper-wrapper">
+              <div class="blog-slider__item swiper-slide">
+                <div class="blog-slider__img">
+                  <img
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+                    alt="E-commerce Platform"
+                  />
+                </div>
+                <div class="blog-slider__content">
+                  <span class="blog-slider__code">Full-Stack Development</span>
+                  <div class="blog-slider__title">E-commerce Platform</div>
+                  <div class="blog-slider__text">
+                    Complete e-commerce solution with payment integration,
+                    inventory management, and real-time analytics built with
+                    React and Node.js.
+                  </div>
+                  <a href="#" class="blog-slider__button">VIEW PROJECT</a>
+                </div>
+              </div>
+
+              <div class="blog-slider__item swiper-slide">
+                <div class="blog-slider__img">
+                  <img
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                    alt="Analytics Dashboard"
+                  />
+                </div>
+                <div class="blog-slider__content">
+                  <span class="blog-slider__code">Data Visualization</span>
+                  <div class="blog-slider__title">Analytics Dashboard</div>
+                  <div class="blog-slider__text">
+                    Real-time data visualization dashboard with interactive
+                    charts and customizable widgets using D3.js and Vue.js.
+                  </div>
+                  <a href="#" class="blog-slider__button">VIEW PROJECT</a>
+                </div>
+              </div>
+
+              <div class="blog-slider__item swiper-slide">
+                <div class="blog-slider__img">
+                  <img
+                    src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop"
+                    alt="Mobile Banking App"
+                  />
+                </div>
+                <div class="blog-slider__content">
+                  <span class="blog-slider__code">Mobile Development</span>
+                  <div class="blog-slider__title">Mobile Banking App</div>
+                  <div class="blog-slider__text">
+                    Secure mobile banking application with biometric
+                    authentication and real-time transactions built with React
+                    Native.
+                  </div>
+                  <a href="#" class="blog-slider__button">VIEW PROJECT</a>
+                </div>
+              </div>
+
+              <div class="blog-slider__item swiper-slide">
+                <div class="blog-slider__img">
+                  <img
+                    src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop"
+                    alt="AI Content Platform"
+                  />
+                </div>
+                <div class="blog-slider__content">
+                  <span class="blog-slider__code">AI & Machine Learning</span>
+                  <div class="blog-slider__title">AI Content Platform</div>
+                  <div class="blog-slider__text">
+                    AI-powered content generation platform with natural language
+                    processing and custom model training using Python and
+                    TensorFlow.
+                  </div>
+                  <a href="#" class="blog-slider__button">VIEW PROJECT</a>
+                </div>
+              </div>
+            </div>
+            <div class="blog-slider__pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section with Swiper -->
+      <section class="testimonials" data-scroll-section id="testimonials">
+        <h2 class="section-title">TESTIMONIALS</h2>
+        <div class="swiper testimonials-swiper">
+          <div class="swiper-wrapper">
+            <!-- Testimonial Slides (10 total) -->
+            <div class="swiper-slide">
+              <blockquote>
+                "Shivdutt delivered our e-commerce platform 2 weeks ahead of
+                schedule with zero bugs. His attention to detail is unmatched."
+              </blockquote>
+              <div class="client-info">
+                <p>Sarah Johnson</p>
+                <p>CEO, TechCorp</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <blockquote>
+                "The mobile app Shivdutt developed increased our user retention
+                by 40%. His technical expertise is outstanding."
+              </blockquote>
+              <div class="client-info">
+                <p>Michael Chen</p>
+                <p>CTO, AppVantage</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <blockquote>
+                "Shivdutt delivered our e-commerce platform 2 weeks ahead of
+                schedule with zero bugs. His attention to detail is unmatched."
+              </blockquote>
+              <div class="client-info">
+                <p>Sarah Johnson</p>
+                <p>CEO, TechCorp</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <blockquote>
+                "The mobile app Shivdutt developed increased our user retention
+                by 40%. His technical expertise is outstanding."
+              </blockquote>
+              <div class="client-info">
+                <p>Michael Chen</p>
+                <p>CTO, AppVantage</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <blockquote>
+                "Shivdutt delivered our e-commerce platform 2 weeks ahead of
+                schedule with zero bugs. His attention to detail is unmatched."
+              </blockquote>
+              <div class="client-info">
+                <p>Sarah Johnson</p>
+                <p>CEO, TechCorp</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <blockquote>
+                "The mobile app Shivdutt developed increased our user retention
+                by 40%. His technical expertise is outstanding."
+              </blockquote>
+              <div class="client-info">
+                <p>Michael Chen</p>
+                <p>CTO, AppVantage</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <blockquote>
+                "Shivdutt delivered our e-commerce platform 2 weeks ahead of
+                schedule with zero bugs. His attention to detail is unmatched."
+              </blockquote>
+              <div class="client-info">
+                <p>Sarah Johnson</p>
+                <p>CEO, TechCorp</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <blockquote>
+                "The mobile app Shivdutt developed increased our user retention
+                by 40%. His technical expertise is outstanding."
+              </blockquote>
+              <div class="client-info">
+                <p>Michael Chen</p>
+                <p>CTO, AppVantage</p>
+              </div>
+            </div>
+            <!-- Add 8 more testimonials following same structure -->
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about" data-scroll-section id="about">
+        <h2 class="section-title">ABOUT ME</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I'm Shivdutt, a full-stack developer with 5+ years of experience
+              building scalable web applications.
+            </p>
+            <p>
+              My expertise spans from UI design to cloud infrastructure,
+              ensuring end-to-end project success.
+            </p>
+          </div>
+          <div class="skills">
+            <div class="skills-column">
+              <h4>Frontend</h4>
+              <ul>
+                <li>React.js</li>
+                <li>TypeScript</li>
+                <li>Next.js</li>
+                <li>GSAP</li>
+                <li>Three.js</li>
+              </ul>
+            </div>
+            <div class="skills-column">
+              <h4>Backend</h4>
+              <ul>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>GraphQL</li>
+                <li>PostgreSQL</li>
+                <li>MongoDB</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact" data-scroll-section id="contact">
+        <h2>GET IN TOUCH</h2>
+        <div class="contact-content">
+          <a href="mailto:hello@Shivduttkarwa@gmail.com" class="contact-email"
+            >shivduttkarwa@gmail.com</a
+          >
+          <div class="contact-links">
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">Resume</a>
+          </div>
+        </div>
+        <footer>
+          <p>© 2025 Shivdutt. All rights reserved.</p>
+          <p>Built with passion</p>
+        </footer>
+      </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CSSRulePlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <script type="module">
+      // Simple easing functions
+      const easingUtils = {
+        linear: (t) => t,
+        easeInExpo: (t) => (t === 0 ? 0 : Math.pow(2, 10 * (t - 1))),
+        easeOutExpo: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+        easeInOutExpo: (t) => {
+          if (t === 0) return 0;
+          if (t === 1) return 1;
+          if ((t /= 0.5) < 1) return 0.5 * Math.pow(2, 10 * (t - 1));
+          return 0.5 * (-Math.pow(2, -10 * --t) + 2);
+        },
+      };
+
+      class AHole extends HTMLElement {
+        connectedCallback() {
+          // Elements
+          this.canvas = this.querySelector(".js-canvas");
+          this.ctx = this.canvas.getContext("2d");
+
+          this.discs = [];
+          this.lines = [];
+          this.codeTexts = [
+            // React
+            "const [state, setState] = useState();",
+            "useEffect(() => {}, []);",
+            'import React from "react";',
+            "export default function App() {",
+            "return <Component />;",
+
+            // Angular
+            '@Component({ selector: "app-hero" })',
+            "constructor(private service: Service) {}",
+            "ngOnInit(): void {",
+            "this.data$ = this.service.getData();",
+            '*ngFor="let item of items"',
+
+            // Python
+            "def create_app():",
+            "import pandas as pd",
+            "class UserModel(BaseModel):",
+            "async def get_data():",
+            "return JsonResponse(data)",
+            'if __name__ == "__main__":',
+
+            // JavaScript
+            "async function fetchData() {",
+            "const response = await fetch();",
+            'document.querySelector(".hero")',
+            'console.log("Full-Stack Dev");',
+
+            // .NET
+            "public class ApiController : Controller",
+            "public async Task<IActionResult> Get()",
+            "using Microsoft.AspNetCore.Mvc;",
+            "services.AddScoped<IService>();",
+            "app.UseCors();",
+          ];
+
+          // Init
+          this.setSize();
+          this.setDiscs();
+          this.setLines();
+          this.setCodeParticles();
+
+          this.bindEvents();
+
+          // RAF
+          requestAnimationFrame(this.tick.bind(this));
+        }
+
+        bindEvents() {
+          window.addEventListener("resize", this.onResize.bind(this));
+        }
+
+        onResize() {
+          this.setSize();
+          this.setDiscs();
+          this.setLines();
+          this.setCodeParticles();
+        }
+
+        setSize() {
+          this.rect = this.getBoundingClientRect();
+
+          this.render = {
+            width: this.rect.width,
+            height: this.rect.height,
+            dpi: window.devicePixelRatio,
+          };
+
+          this.canvas.width = this.render.width * this.render.dpi;
+          this.canvas.height = this.render.height * this.render.dpi;
+        }
+
+        setDiscs() {
+          const { width, height } = this.rect;
+
+          this.discs = [];
+
+          this.startDisc = {
+            x: width * 0.5,
+            y: height * 0.45,
+            w: width * 0.75,
+            h: height * 0.7,
+          };
+
+          this.endDisc = {
+            x: width * 0.5,
+            y: height * 0.95,
+            w: 0,
+            h: 0,
+          };
+
+          const totalDiscs = 100;
+
+          let prevBottom = height;
+          this.clip = {};
+
+          for (let i = 0; i < totalDiscs; i++) {
+            const p = i / totalDiscs;
+
+            const disc = this.tweenDisc({
+              p,
+            });
+
+            const bottom = disc.y + disc.h;
+
+            if (bottom <= prevBottom) {
+              this.clip = {
+                disc: { ...disc },
+                i,
+              };
+            }
+
+            prevBottom = bottom;
+
+            this.discs.push(disc);
+          }
+
+          this.clip.path = new Path2D();
+          this.clip.path.ellipse(
+            this.clip.disc.x,
+            this.clip.disc.y,
+            this.clip.disc.w,
+            this.clip.disc.h,
+            0,
+            0,
+            Math.PI * 2
+          );
+          this.clip.path.rect(
+            this.clip.disc.x - this.clip.disc.w,
+            0,
+            this.clip.disc.w * 2,
+            this.clip.disc.y
+          );
+        }
+
+        setLines() {
+          const { width, height } = this.rect;
+
+          this.lines = [];
+
+          const totalLines = 100;
+          const linesAngle = (Math.PI * 2) / totalLines;
+
+          for (let i = 0; i < totalLines; i++) {
+            this.lines.push([]);
+          }
+
+          this.discs.forEach((disc) => {
+            for (let i = 0; i < totalLines; i++) {
+              const angle = i * linesAngle;
+
+              const p = {
+                x: disc.x + Math.cos(angle) * disc.w,
+                y: disc.y + Math.sin(angle) * disc.h,
+              };
+
+              this.lines[i].push(p);
+            }
+          });
+
+          this.linesCanvas = new OffscreenCanvas(width, height);
+          const ctx = this.linesCanvas.getContext("2d");
+
+          this.lines.forEach((line, i) => {
+            ctx.save();
+
+            let lineIsIn = false;
+            line.forEach((p1, j) => {
+              if (j === 0) {
+                return;
+              }
+
+              const p0 = line[j - 1];
+
+              if (
+                !lineIsIn &&
+                (ctx.isPointInPath(this.clip.path, p1.x, p1.y) ||
+                  ctx.isPointInStroke(this.clip.path, p1.x, p1.y))
+              ) {
+                lineIsIn = true;
+              } else if (lineIsIn) {
+                ctx.clip(this.clip.path);
+              }
+
+              ctx.beginPath();
+
+              ctx.moveTo(p0.x, p0.y);
+              ctx.lineTo(p1.x, p1.y);
+
+              ctx.strokeStyle = "rgba(68, 68, 68, 0.3)";
+              ctx.lineWidth = 1;
+              ctx.stroke();
+
+              ctx.closePath();
+            });
+
+            ctx.restore();
+          });
+
+          this.linesCtx = ctx;
+        }
+
+        setCodeParticles() {
+          const { width, height } = this.rect;
+
+          this.particles = [];
+
+          this.particleArea = {
+            sw: this.clip.disc.w * 0.5,
+            ew: this.clip.disc.w * 2,
+            h: height * 0.85,
+          };
+          this.particleArea.sx = (width - this.particleArea.sw) / 2;
+          this.particleArea.ex = (width - this.particleArea.ew) / 2;
+
+          const totalParticles = 25;
+
+          for (let i = 0; i < totalParticles; i++) {
+            const particle = this.initCodeParticle(true);
+            this.particles.push(particle);
+          }
+        }
+
+        initCodeParticle(start = false) {
+          const sx =
+            this.particleArea.sx + this.particleArea.sw * Math.random();
+          const ex =
+            this.particleArea.ex + this.particleArea.ew * Math.random();
+          const dx = ex - sx;
+          const y = start
+            ? this.particleArea.h * Math.random()
+            : this.particleArea.h;
+          const vy = 0.3 + Math.random() * 0.8;
+
+          // Pick random code text
+          const codeText =
+            this.codeTexts[Math.floor(Math.random() * this.codeTexts.length)];
+
+          return {
+            x: sx,
+            sx,
+            dx,
+            y,
+            vy,
+            p: 0,
+            text: codeText,
+            opacity: 0.2 + Math.random() * 0.3,
+            rotation: Math.random() * Math.PI * 2,
+            rotationSpeed: (Math.random() - 0.5) * 0.02,
+            scale: 0.5 + Math.random() * 0.5,
+          };
+        }
+
+        tweenValue(start, end, p, ease = false) {
+          const delta = end - start;
+
+          const easeFn =
+            easingUtils[
+              ease
+                ? "ease" + ease.charAt(0).toUpperCase() + ease.slice(1)
+                : "linear"
+            ];
+
+          return start + delta * easeFn(p);
+        }
+
+        drawDiscs() {
+          const { ctx } = this;
+
+          ctx.strokeStyle = "rgba(68, 68, 68, 0.4)";
+          ctx.lineWidth = 1;
+
+          // Outer disc
+          const outerDisc = this.startDisc;
+
+          ctx.beginPath();
+
+          ctx.ellipse(
+            outerDisc.x,
+            outerDisc.y,
+            outerDisc.w,
+            outerDisc.h,
+            0,
+            0,
+            Math.PI * 2
+          );
+          ctx.stroke();
+
+          ctx.closePath();
+
+          // Discs
+          this.discs.forEach((disc, i) => {
+            if (i % 5 !== 0) {
+              return;
+            }
+
+            if (disc.w < this.clip.disc.w - 5) {
+              ctx.save();
+              ctx.clip(this.clip.path);
+            }
+
+            ctx.beginPath();
+
+            ctx.ellipse(disc.x, disc.y, disc.w, disc.h, 0, 0, Math.PI * 2);
+            ctx.stroke();
+
+            ctx.closePath();
+
+            if (disc.w < this.clip.disc.w - 5) {
+              ctx.restore();
+            }
+          });
+        }
+
+        drawLines() {
+          const { ctx, linesCanvas } = this;
+          ctx.drawImage(linesCanvas, 0, 0);
+        }
+
+        drawCodeParticles() {
+          const { ctx } = this;
+
+          ctx.save();
+          ctx.clip(this.clip.path);
+
+          this.particles.forEach((particle) => {
+            ctx.save();
+
+            ctx.globalAlpha = particle.opacity;
+            ctx.translate(particle.x, particle.y);
+            ctx.rotate(particle.rotation);
+            ctx.scale(particle.scale, particle.scale);
+
+            // Draw code text
+            ctx.font = "10px 'Martian Mono', monospace";
+            ctx.fillStyle = "rgba(0, 255, 100, 0.4)";
+            ctx.shadowColor = "rgba(0, 255, 100, 0.3)";
+            ctx.shadowBlur = 5;
+            ctx.textAlign = "center";
+            ctx.fillText(particle.text, 0, 0);
+
+            ctx.restore();
+          });
+
+          ctx.restore();
+        }
+
+        moveDiscs() {
+          this.discs.forEach((disc) => {
+            disc.p = (disc.p + 0.001) % 1;
+            this.tweenDisc(disc);
+          });
+        }
+
+        moveCodeParticles() {
+          this.particles.forEach((particle) => {
+            particle.p = 1 - particle.y / this.particleArea.h;
+            particle.x = particle.sx + particle.dx * particle.p;
+            particle.y -= particle.vy;
+            particle.rotation += particle.rotationSpeed;
+
+            // Fade in/out based on position
+            if (particle.y > this.particleArea.h * 0.8) {
+              particle.opacity = Math.max(
+                0,
+                (this.particleArea.h - particle.y) / (this.particleArea.h * 0.2)
+              );
+            } else if (particle.y < this.particleArea.h * 0.2) {
+              particle.opacity = Math.min(
+                0.8,
+                particle.y / (this.particleArea.h * 0.2)
+              );
+            }
+
+            if (particle.y < -50) {
+              // Reset particle
+              const newParticle = this.initCodeParticle();
+              Object.assign(particle, newParticle);
+            }
+          });
+        }
+
+        tweenDisc(disc) {
+          disc.x = this.tweenValue(this.startDisc.x, this.endDisc.x, disc.p);
+          disc.y = this.tweenValue(
+            this.startDisc.y,
+            this.endDisc.y,
+            disc.p,
+            "inExpo"
+          );
+
+          disc.w = this.tweenValue(this.startDisc.w, this.endDisc.w, disc.p);
+          disc.h = this.tweenValue(this.startDisc.h, this.endDisc.h, disc.p);
+
+          return disc;
+        }
+
+        tick(time) {
+          const { ctx } = this;
+
+          ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+          ctx.save();
+          ctx.scale(this.render.dpi, this.render.dpi);
+
+          this.moveDiscs();
+          this.moveCodeParticles();
+
+          this.drawDiscs();
+          this.drawLines();
+          this.drawCodeParticles();
+
+          ctx.restore();
+
+          requestAnimationFrame(this.tick.bind(this));
+        }
+      }
+
+      customElements.define("a-hole", AHole);
+    </script>
+  </body>
+</html>

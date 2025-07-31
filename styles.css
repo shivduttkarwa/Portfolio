@@ -169,190 +169,12 @@ svg path {
   visibility: hidden;
 }
 
-/* Ensure full screen on mobile */
-@media screen and (max-width: 768px) {
-  .menu {
-    margin-inline: 0;
-    padding: 2rem 1rem;
-  }
-
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
-    min-width: 100vw;
-    max-height: 100vh;
-    max-width: 100vw;
-    z-index: 9998;
-  }
-
-  .overlay svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    min-width: 100vw;
-  }
-
-  .menu-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
-  }
-
-  .primary-menu {
-    flex: 1;
-  }
-
-  .secondary-menu {
-    flex: 1;
-    gap: 2rem;
-  }
-
-  .wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .menu-item {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Modern Menu Mobile Styles */
-  .modern-menu-item a {
-    font-size: clamp(35px, 8vw, 60px) !important;
-  }
-
-  .menu-text {
-    font-size: clamp(35px, 8vw, 60px) !important;
-  }
-
-  .menu-number {
-    font-size: clamp(16px, 4vw, 20px) !important;
-    margin-right: 1rem;
-    min-width: 40px;
-  }
-
-  .menu-arrow {
-    font-size: clamp(20px, 5vw, 30px) !important;
-    margin-right: 1rem;
-  }
-
-  .modern-menu-item {
-    padding: 1rem 0;
-  }
-
-  .secondary-menu .menu-item a {
-    font-size: clamp(20px, 5vw, 28px);
-  }
-
-  /* Mobile styles for premium secondary menu */
-  .secondary-menu {
-    padding: 1.5rem 1rem;
-    align-items: center;
-  }
-
-  .secondary-menu .menu-container {
-    max-width: 300px;
-    gap: 1.5rem;
-  }
-
-  .section-header {
-    margin-bottom: 1.5rem;
-  }
-
-  .section-label {
-    font-size: 0.8rem;
-  }
-
-  .contact-section {
-    margin-bottom: 2.5rem;
-  }
-
-  .premium-btn {
-    border-radius: 12px;
-  }
-
-  .btn-content {
-    padding: 1.2rem;
-  }
-
-  .btn-icon-wrapper {
-    width: 45px;
-    height: 45px;
-    font-size: 1.1rem;
-  }
-
-  .btn-main-text {
-    font-size: 1rem;
-  }
-
-  .btn-sub-text {
-    font-size: 0.75rem;
-  }
-
-  .social-grid {
-    gap: 0.8rem;
-  }
-
-  .social-card {
-    padding: 1.2rem 0.8rem;
-    border-radius: 10px;
-  }
-
-  .social-icon-bg {
-    width: 40px;
-    height: 40px;
-  }
-
-  .social-icon-bg i {
-    font-size: 1.2rem;
-  }
-
-  .social-label {
-    font-size: 0.75rem;
-  }
-
-  .footer-links {
-    gap: 1.5rem;
-  }
-
-  .footer-link {
-    font-size: 0.7rem;
-  }
-
-  .copyright p {
-    font-size: 0.65rem;
-  }
-
-  .menu a span {
-    font-size: clamp(14px, 4vw, 18px);
-    margin-right: 1em;
-  }
-  /* Prevent any background content from showing when menu is open */
-  body.menu-open {
-    overflow: hidden !important;
-    position: fixed !important;
-    width: 100% !important;
-    height: 100% !important;
-  }
+/* Prevent any background content from showing when menu is open */
+body.menu-open {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .menu > div {
@@ -658,7 +480,7 @@ svg path {
 }
 
 .premium-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -686,16 +508,13 @@ svg path {
 .contact-btn:hover {
   background: rgba(255, 94, 26, 0.15);
   border-color: var(--primary);
-  box-shadow: 
-    0 8px 25px rgba(255, 94, 26, 0.3),
-    0 0 20px rgba(255, 94, 26, 0.2);
+  box-shadow: 0 8px 25px rgba(255, 94, 26, 0.3), 0 0 20px rgba(255, 94, 26, 0.2);
 }
 
 .email-btn:hover {
   background: rgba(26, 255, 213, 0.15);
   border-color: var(--tertiary);
-  box-shadow: 
-    0 8px 25px rgba(26, 255, 213, 0.3),
+  box-shadow: 0 8px 25px rgba(26, 255, 213, 0.3),
     0 0 20px rgba(26, 255, 213, 0.2);
 }
 
@@ -742,11 +561,11 @@ svg path {
 }
 
 .social-card.instagram {
-  background: linear-gradient(45deg, #E4405F, #C13584, #833AB4);
+  background: linear-gradient(45deg, #e4405f, #c13584, #833ab4);
 }
 
 .social-card.linkedin {
-  background: #0077B5;
+  background: #0077b5;
 }
 
 .social-card.github {
@@ -754,7 +573,7 @@ svg path {
 }
 
 .social-card.twitter {
-  background: #1DA1F2;
+  background: #1da1f2;
 }
 
 .social-card:hover {
@@ -800,7 +619,7 @@ svg path {
 }
 
 .footer-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -949,6 +768,11 @@ svg path {
 }
 
 @media screen and (max-width: 768px) {
+  .modern-menu-item {
+    position: relative;
+    padding: 0.3rem 0px;
+    border-bottom: 1px solid rgba(229, 227, 220, 0.1);
+  }
   #toggle-btn {
     width: 80px;
     height: 80px;
@@ -958,6 +782,11 @@ svg path {
   .btn-outline {
     width: 80px;
     height: 80px;
+  }
+
+  /* Hide secondary menu on mobile */
+  .secondary-menu {
+    display: none !important;
   }
 
   .primary-menu {
@@ -979,46 +808,37 @@ svg path {
     height: auto;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
+    margin-top: -140px;
   }
 
-  .primary-menu a {
-    font-size: 55px;
+  /* Use specific selectors to avoid !important */
+  .menu .primary-menu .modern-menu-item a {
+    font-size: 35px;
     line-height: 1;
     text-align: center;
     display: block;
   }
 
-  .secondary-menu {
-    gap: 1.5em;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-bottom: 2rem;
+  .menu .primary-menu .menu-text {
+    font-size: 35px;
+    line-height: 1;
   }
 
-  .secondary-menu .menu-container {
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    align-items: center;
+  .menu .primary-menu .menu-number {
+    font-size: 14px;
+    margin-right: 0.8rem;
   }
 
-  .secondary-menu .menu-container .wrapper {
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
+  .menu .primary-menu a span {
+    font-size: 14px;
+    margin-right: 0.8rem;
   }
 
-  .secondary-menu .menu-item a {
-    font-size: 24px;
-    text-align: center;
-    display: block;
-  }
-
-  .menu a span {
-    font-size: 16px;
-    margin-right: 1em;
+  /* Hide decorative elements on mobile */
+  .menu-arrow,
+  .menu-line {
+    display: none;
   }
 }
 
@@ -1038,28 +858,29 @@ svg path {
     padding: 1.5rem 0.5rem;
   }
 
-  .primary-menu a {
-    font-size: 40px;
+  .primary-menu .menu-container .wrapper {
+    gap: 0.3rem;
+  }
+
+  .menu .primary-menu .modern-menu-item a {
+    font-size: 30px;
     line-height: 1;
     text-align: center;
   }
 
-  .secondary-menu .menu-item a {
-    font-size: 20px;
-    text-align: center;
+  .menu .primary-menu .menu-text {
+    font-size: 30px !important;
+    line-height: 1 !important;
   }
 
-  .menu a span {
-    font-size: 14px;
-    margin-right: 0.8em;
+  .menu .primary-menu .menu-number {
+    font-size: 12px !important;
+    margin-right: 0.6rem !important;
   }
 
-  .secondary-menu {
-    gap: 1.2em;
-  }
-
-  .secondary-menu .menu-container .wrapper {
-    gap: 1.2rem;
+  .menu .primary-menu a span {
+    font-size: 12px;
+    margin-right: 0.6rem;
   }
 }
 
@@ -1075,257 +896,32 @@ svg path {
     height: 60px;
   }
 
-  .primary-menu a {
-    font-size: 40px;
+  .primary-menu .menu-container .wrapper {
+    gap: 0.2rem;
   }
 
-  .secondary-menu .menu-item a {
-    font-size: 18px;
+  .menu .primary-menu .modern-menu-item a {
+    font-size: 26px;
   }
 
-  .menu a span {
-    font-size: 12px;
+  .menu .primary-menu .menu-text {
+    font-size: 26px;
   }
 
-  .secondary-menu {
-    gap: 1.5em;
+  .menu .primary-menu .menu-number {
+    font-size: 10px;
+    margin-right: 0.5rem;
+  }
+
+  .menu .primary-menu a span {
+    font-size: 10px;
+    margin-right: 0.5rem;
   }
 }
 
-/* Ensure proper hamburger line scaling on mobile */
-@media screen and (max-width: 768px) {
-  #hamburger .line-1 {
-    width: 16px;
-    transform: translate(12px, -2px);
-  }
+/* Hamburger line scaling handled in main mobile breakpoints above */
 
-  #hamburger .line-2 {
-    width: 20px;
-    transform: translate(-5px, 2px);
-  }
-}
-
-@media screen and (max-width: 480px) {
-  #hamburger .line-1 {
-    width: 14px;
-    transform: translate(10px, -2px);
-  }
-
-  #hamburger .line-2 {
-    width: 18px;
-    transform: translate(-4px, 2px);
-  }
-}
-
-/* ==================== MOBILE MENU RESPONSIVE STYLES ==================== */
-
-/* Mobile First - Stack menus vertically for better UX */
-@media screen and (max-width: 767px) {
-  
-  /* Main menu container - stack vertically */
-  .menu > div {
-    flex-direction: column;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  /* PRIMARY MENU - Top section */
-  .primary-menu {
-    flex: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    border-bottom: 1px solid rgba(255, 94, 26, 0.2);
-  }
-  
-  .primary-menu .menu-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .primary-menu .wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(0.5rem, 2vw, 1rem);
-  }
-  
-  .primary-menu .menu-item {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .primary-menu .menu-item a {
-    font-size: clamp(28px, 7vw, 40px) !important;
-    line-height: 1.1;
-    display: block;
-    padding: clamp(0.3rem, 1vw, 0.5rem) 0;
-  }
-  
-  .menu-text {
-    font-size: clamp(28px, 7vw, 40px) !important;
-    line-height: 1.1;
-  }
-  
-  .menu-number {
-    font-size: clamp(14px, 3vw, 18px) !important;
-    margin-right: 0.8rem;
-  }
-  
-  /* Hide decorative elements on mobile */
-  .menu-arrow,
-  .menu-line {
-    display: none;
-  }
-  
-  /* SECONDARY MENU - Bottom section */
-  .secondary-menu {
-    flex: 1;
-    min-height: 0;
-    padding: 1.5rem 1rem;
-    margin-right: 0;
-    border-left: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow-y: auto;
-  }
-  
-  .secondary-menu .menu-container {
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-  
-  .contact-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .secondary-menu-item {
-    width: 100%;
-    margin-bottom: 0.8rem;
-  }
-  
-  .premium-btn {
-    width: 100%;
-    max-width: 200px;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    letter-spacing: 1px;    
-    min-height: 48px;
-  }
-  
-  .social-menu-item {
-    width: 100%;
-    margin: 1rem 0;
-  }
-  
-  .social-grid {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  
-  .social-card {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    border-radius: 8px;
-  }
-  
-  .footer-menu-item {
-    width: 100%;
-  }
-  
-  .footer-content {
-    text-align: center;
-    padding-top: 1rem;
-  }
-  
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 0.8rem;
-    flex-wrap: wrap;
-  }
-  
-  .footer-link {
-    font-size: 0.85rem;
-    padding: 0.5rem;
-  }
-  
-  .copyright p {
-    font-size: 0.75rem;
-    margin: 0;
-  }
-}
-
-/* Small Mobile Adjustments */
-@media screen and (max-width: 480px) {
-  .primary-menu {
-    padding: 0.8rem;
-  }
-  
-  .primary-menu .wrapper {
-    gap: clamp(0.3rem, 1.5vw, 0.8rem);
-  }
-  
-  .primary-menu .menu-item a {
-    font-size: clamp(24px, 6vw, 32px) !important;
-    padding: clamp(0.2rem, 0.8vw, 0.4rem) 0;
-  }
-  
-  .menu-text {
-    font-size: clamp(24px, 6vw, 32px) !important;
-  }
-  
-  .menu-number {
-    font-size: clamp(12px, 2.5vw, 14px) !important;
-  }
-  
-  .secondary-menu {
-    padding: 1rem 0.8rem;
-  }
-  
-  .premium-btn {
-    max-width: 180px;
-    padding: 0.9rem 1.2rem;
-    font-size: 0.9rem;
-  }
-  
-  .social-card {
-    width: 42px;
-    height: 42px;
-    font-size: 1.1rem;
-  }
-  
-  .footer-link {
-    font-size: 0.8rem;
-  }
-  
-  .copyright p {
-    font-size: 0.7rem;
-  }
-}
+/* Mobile styles above cover all responsive needs */
 
 /* Tablet Portrait */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -1333,11 +929,11 @@ svg path {
     padding: 2rem 1.5rem 2rem 2rem;
     margin-right: 60px;
   }
-  
+
   .secondary-menu .menu-container {
     max-width: 280px;
   }
-  
+
   .premium-btn {
     padding: 1rem 1.5rem;
     font-size: 0.95rem;

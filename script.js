@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.history.replaceState(null, null, window.location.pathname);
   }
   window.scrollTo(0, 0);
-  
+
   // Register GSAP plugins
   gsap.registerPlugin(ScrollTrigger);
 
@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Menu initialization:", {
     path: path,
     pathExists: !!path,
-    pathD: path ? path.getAttribute('d') : 'no path',
+    pathD: path ? path.getAttribute("d") : "no path",
     spanBefore: spanBefore,
     hamburger: document.getElementById("hamburger"),
     toggleBtn: document.getElementById("toggle-btn"),
@@ -399,11 +399,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const power2 = "power2.inout";
 
-    // Animate hamburger button position and styling
+    // Animate hamburger button position and styling - responsive for mobile
+    const isMobile = window.innerWidth <= 768;
     tl.to("#hamburger", 1.25, {
       marginTop: "-5px",
-      x: -40,
-      y: 40,
+      x: isMobile ? -20 : -40,
+      y: isMobile ? 20 : 40,
       ease: power2,
     });
 
@@ -431,15 +432,15 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
 
-    // Animate button outline circles
+    // Animate button outline circles - responsive for mobile
     tl.to(
       ".btn .btn-outline",
       1.25,
       {
-        x: -40,
-        y: 40,
-        width: "140px",
-        height: "140px",
+        x: isMobile ? -20 : -40,
+        y: isMobile ? 20 : 40,
+        width: isMobile ? "80px" : "140px",
+        height: isMobile ? "80px" : "140px",
         border: "1px solid #e2e2dc",
         ease: power2,
       },
@@ -452,9 +453,9 @@ document.addEventListener("DOMContentLoaded", () => {
       0.8,
       {
         attr: {
-          d: start
+          d: start,
         },
-        ease: power2
+        ease: power2,
       },
       "<"
     ).to(
@@ -462,7 +463,7 @@ document.addEventListener("DOMContentLoaded", () => {
       0.8,
       {
         attr: { d: end },
-        ease: power2
+        ease: power2,
       },
       "-=0.5"
     );
@@ -472,9 +473,9 @@ document.addEventListener("DOMContentLoaded", () => {
       ".menu",
       0.5,
       {
-        visibility: "visible"
+        visibility: "visible",
       },
-      "-=0.4"  // Reduced delay
+      "-=0.4" // Reduced delay
     );
 
     // Menu items animate AFTER background is fully expanded - Primary menu first
@@ -485,51 +486,52 @@ document.addEventListener("DOMContentLoaded", () => {
         top: 0,
         ease: "power3.in",
         stagger: {
-          amount: 0.3
-        }
+          amount: 0.3,
+        },
       },
       "-=0.6"
     )
-    // First contact button
-    .to(
-      ".contact-btn",
-      0.2,
-      {
-        top: 0,
-        ease: "power3.in"
-      },
-      "-=0.1"
-    )
-    // Second contact button
-    .to(
-      ".email-btn",
-      0.2,
-      {
-        top: 0,
-        ease: "power3.in"
-      },
-      "+=0.02"
-    )
-    // Social section
-    .to(
-      ".menu-item .social-content",
-      0.2,
-      {
-        top: 0,
-        ease: "power3.in"
-      },
-      "+=0.02"
-    )
-    // Footer section
-    .to(
-      ".menu-item .footer-content",
-      0.2,
-      {
-        top: 0,
-        ease: "power3.in"
-      },
-      "+=0.02"
-    ).reverse();
+      // First contact button
+      .to(
+        ".contact-btn",
+        0.2,
+        {
+          top: 0,
+          ease: "power3.in",
+        },
+        "-=0.1"
+      )
+      // Second contact button
+      .to(
+        ".email-btn",
+        0.2,
+        {
+          top: 0,
+          ease: "power3.in",
+        },
+        "+=0.02"
+      )
+      // Social section
+      .to(
+        ".menu-item .social-content",
+        0.2,
+        {
+          top: 0,
+          ease: "power3.in",
+        },
+        "+=0.02"
+      )
+      // Footer section
+      .to(
+        ".menu-item .footer-content",
+        0.2,
+        {
+          top: 0,
+          ease: "power3.in",
+        },
+        "+=0.02"
+      )
+      .reverse();
   }
 
   // ==================== END EXACT ORIGINAL CODEPEN JAVASCRIPT ====================
