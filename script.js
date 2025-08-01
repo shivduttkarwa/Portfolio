@@ -702,25 +702,34 @@ document.addEventListener("DOMContentLoaded", () => {
     if (terminalContent) {
       const codeLines = terminalContent.querySelectorAll('.code-line');
       
+      // Ensure content is visible by default
+      gsap.set(codeLines, { opacity: 1, x: 0 });
+      
+      // Create animation that starts from visible state
       gsap.fromTo(codeLines,
         {
-          opacity: 0,
-          x: -20
+          opacity: 0.3,
+          x: -10
         },
         {
           opacity: 1,
           x: 0,
-          duration: 0.5,
-          stagger: 0.2,
+          duration: 0.6,
+          stagger: 0.15,
           ease: "power2.out",
           scrollTrigger: {
             trigger: terminalContent,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse"
+            start: "top 85%",
+            end: "bottom 15%",
+            toggleActions: "play none none none"
           }
         }
       );
+      
+      // Fallback: ensure content is always visible
+      setTimeout(() => {
+        gsap.set(codeLines, { opacity: 1, x: 0 });
+      }, 100);
     }
     
     // CTA button pulse animation
@@ -803,81 +812,195 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize terminal effects
     createTerminalGlitch();
     
-    // Cyberpunk mouse interaction
-    const servicesSection = document.querySelector('.services-revolution');
-    if (servicesSection) {
-      servicesSection.addEventListener('mousemove', (e) => {
-        const rect = servicesSection.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width;
-        const y = (e.clientY - rect.top) / rect.height;
-        
-        // Create cursor trail effect
-        const trail = document.createElement('div');
-        trail.style.cssText = `
-          position: absolute;
-          width: 2px;
-          height: 2px;
-          background: var(--tertiary);
-          border-radius: 50%;
-          pointer-events: none;
-          z-index: 1;
-          left: ${e.clientX - rect.left}px;
-          top: ${e.clientY - rect.top}px;
-          box-shadow: 0 0 10px var(--tertiary);
-        `;
-        
-        servicesSection.appendChild(trail);
-        
-        gsap.to(trail, {
-          scale: 0,
-          opacity: 0,
-          duration: 1,
-          ease: "power2.out",
-          onComplete: () => {
-            if (trail.parentNode) {
-              trail.parentNode.removeChild(trail);
-            }
-          }
-        });
-        
-        // HUD element response to cursor
-        hudElements.forEach((element, index) => {
-          const elementRect = element.getBoundingClientRect();
-          const distance = Math.hypot(
-            e.clientX - (elementRect.left + elementRect.width / 2),
-            e.clientY - (elementRect.top + elementRect.height / 2)
-          );
-          
-          if (distance < 200) {
-            gsap.to(element, {
-              opacity: 0.9,
-              scale: 1.05,
-              duration: 0.3,
-              ease: "power2.out"
-            });
-          } else {
-            gsap.to(element, {
-              opacity: 0.4,
-              scale: 1,
-              duration: 0.5,
-              ease: "power2.out"
-            });
-          }
-        });
+    // ==================== WEBGL PARTICLE HEAD BACKGROUND ==================== 
+    
+    function initParticleHead() {
+      const container = document.querySelector('.particlehead');
+      if (!container) return;
+      
+      // Create canvas
+      const canvas = document.createElement('canvas');
+      container.appendChild(canvas);
+      
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ 
+        canvas: canvas, 
+        alpha: true, 
+        antialias: true
       });
       
-      servicesSection.addEventListener('mouseleave', () => {
-        // Reset all HUD elements
-        hudElements.forEach((element) => {
-          gsap.to(element, {
-            opacity: 0.4,
-            scale: 1,
-            duration: 0.5,
-            ease: "power2.out"
-          });
+      renderer.setSize(container.offsetWidth, container.offsetHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      
+      // Brand colors
+      const brandColors = [
+        new THREE.Color(0xff5e1a), // orange
+        new THREE.Color(0x1affd5), // cyan  
+        new THREE.Color(0xff1a6a)  // pink
+      ];
+      
+      // Create particle head shape
+      const particleCount = 150;
+      const particles = new THREE.BufferGeometry();
+      const positions = new Float32Array(particleCount * 3);
+      const colors = new Float32Array(particleCount * 3);
+      const originalPositions = new Float32Array(particleCount * 3);
+      
+      // Define head shape points
+      const headShape = [];
+      
+      // Create head outline (circle for head)
+      for (let i = 0; i < 60; i++) {
+        const angle = (i / 60) * Math.PI * 2;
+        const radius = 3;
+        headShape.push({
+          x: Math.cos(angle) * radius,
+          y: Math.sin(angle) * radius + 1,
+          z: 0
         });
+      }
+      
+      // Add facial features
+      // Eyes
+      headShape.push({ x: -1, y: 1.5, z: 0.2 });
+      headShape.push({ x: 1, y: 1.5, z: 0.2 });
+      
+      // Nose
+      headShape.push({ x: 0, y: 0.5, z: 0.3 });
+      
+      // Mouth curve
+      for (let i = 0; i < 15; i++) {
+        const t = i / 14;
+        const angle = Math.PI * t;
+        headShape.push({
+          x: (Math.cos(angle) - 1) * 1.5,
+          y: -0.5 - Math.sin(angle) * 0.5,
+          z: 0.1
+        });
+      }
+      
+      // Fill remaining particles randomly within head area
+      while (headShape.length < particleCount) {
+        const x = (Math.random() - 0.5) * 6;
+        const y = (Math.random() - 0.5) * 6;
+        const distance = Math.sqrt(x * x + (y - 1) * (y - 1));
+        
+        if (distance < 3) { // Inside head circle
+          headShape.push({
+            x: x,
+            y: y,
+            z: (Math.random() - 0.5) * 1
+          });
+        }
+      }
+      
+      // Set particle positions
+      for (let i = 0; i < particleCount; i++) {
+        const point = headShape[i];
+        
+        positions[i * 3] = point.x;
+        positions[i * 3 + 1] = point.y;
+        positions[i * 3 + 2] = point.z;
+        
+        // Store original positions
+        originalPositions[i * 3] = point.x;
+        originalPositions[i * 3 + 1] = point.y;
+        originalPositions[i * 3 + 2] = point.z;
+        
+        // Assign colors
+        const color = brandColors[i % 3];
+        colors[i * 3] = color.r;
+        colors[i * 3 + 1] = color.g;
+        colors[i * 3 + 2] = color.b;
+      }
+      
+      particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      particles.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+      
+      const particleMaterial = new THREE.PointsMaterial({
+        size: 0.05,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.7,
+        blending: THREE.AdditiveBlending
       });
+      
+      const particleSystem = new THREE.Points(particles, particleMaterial);
+      scene.add(particleSystem);
+      
+      camera.position.z = 8;
+      
+      // Mouse interaction
+      let mouseX = 0;
+      let mouseY = 0;
+      
+      const handleMouseMove = (event) => {
+        const rect = container.getBoundingClientRect();
+        mouseX = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        mouseY = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+      };
+      
+      container.addEventListener('mousemove', handleMouseMove);
+      
+      // Animation loop
+      const animate = () => {
+        requestAnimationFrame(animate);
+        
+        const time = Date.now() * 0.001;
+        
+        // Particle animation with wave effect
+        const positions = particleSystem.geometry.attributes.position.array;
+        
+        for (let i = 0; i < particleCount; i++) {
+          const i3 = i * 3;
+          
+          // Get original position
+          const originalX = originalPositions[i3];
+          const originalY = originalPositions[i3 + 1];
+          const originalZ = originalPositions[i3 + 2];
+          
+          // Add wave motion
+          const waveX = Math.sin(time + originalY * 2) * 0.1;
+          const waveY = Math.cos(time + originalX * 2) * 0.1;
+          const waveZ = Math.sin(time * 0.5 + i * 0.1) * 0.2;
+          
+          positions[i3] = originalX + waveX;
+          positions[i3 + 1] = originalY + waveY;
+          positions[i3 + 2] = originalZ + waveZ;
+        }
+        
+        particleSystem.geometry.attributes.position.needsUpdate = true;
+        
+        // Mouse interaction - subtle head movement
+        particleSystem.rotation.y = mouseX * 0.1;
+        particleSystem.rotation.x = mouseY * 0.1;
+        
+        // Gentle floating
+        particleSystem.position.y = Math.sin(time * 0.5) * 0.2;
+        
+        renderer.render(scene, camera);
+      };
+      
+      animate();
+      
+      // Handle resize
+      const handleResize = () => {
+        camera.aspect = container.offsetWidth / container.offsetHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.offsetWidth, container.offsetHeight);
+      };
+      
+      window.addEventListener('resize', handleResize);
     }
+    
+    // Initialize particle head background
+    if (document.querySelector('.particlehead')) {
+      initParticleHead();
+    }
+    
+    // ==================== END WEBGL PARTICLE HEAD BACKGROUND ====================
+ 
   }
   
   // Initialize services animations
