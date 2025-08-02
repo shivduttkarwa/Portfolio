@@ -777,7 +777,27 @@
 
       <!-- Testimonials Section with Swiper -->
       <section class="testimonials" data-scroll-section id="testimonials">
-        <h2 class="section-title">TESTIMONIALS</h2>
+        <div class="testimonials-header">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-buttons">
+                <span class="btn red"></span>
+                <span class="btn yellow"></span>
+                <span class="btn green"></span>
+              </div>
+              <div class="terminal-title">testimonials.tsx</div>
+            </div>
+            <div class="terminal-content">
+              <div class="code-line">
+                <span class="code-comment">// Client Feedback</span>
+              </div>
+              <div class="code-line">
+                <span class="code-keyword">const</span>
+                <span class="code-function">testimonials</span> = [
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="swiper testimonials-swiper">
           <div class="swiper-wrapper">
             <!-- Testimonial Slides (10 total) -->
@@ -869,40 +889,312 @@
         </div>
       </section>
 
-      <!-- About Section -->
-      <section class="about" data-scroll-section id="about">
-        <h2 class="section-title">ABOUT ME</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              I'm Shivdutt, a full-stack developer with 5+ years of experience
-              building scalable web applications.
-            </p>
-            <p>
-              My expertise spans from UI design to cloud infrastructure,
-              ensuring end-to-end project success.
-            </p>
-          </div>
-          <div class="skills">
-            <div class="skills-column">
-              <h4>Frontend</h4>
-              <ul>
-                <li>React.js</li>
-                <li>TypeScript</li>
-                <li>Next.js</li>
-                <li>GSAP</li>
-                <li>Three.js</li>
-              </ul>
+      <!-- Revolutionary About Section -->
+      <section class="about-futuristic" data-scroll-section id="about">
+        <!-- Dynamic Background -->
+        <div class="neural-network-bg">
+          <canvas id="neural-canvas"></canvas>
+        </div>
+
+        <!-- Floating Terminal Header -->
+        <div class="floating-terminal">
+          <div class="holo-terminal">
+            <div class="terminal-glow"></div>
+            <div class="terminal-header">
+              <div class="terminal-buttons">
+                <span class="btn red pulse"></span>
+                <span class="btn yellow pulse"></span>
+                <span class="btn green pulse"></span>
+              </div>
+              <div class="terminal-title glitch" data-text="Human.exe">Human.exe</div>
             </div>
-            <div class="skills-column">
-              <h4>Backend</h4>
-              <ul>
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>GraphQL</li>
-                <li>PostgreSQL</li>
-                <li>MongoDB</li>
-              </ul>
+            <div class="terminal-content">
+              <div class="typing-animation">
+                <span class="code-prompt">$</span>
+                <span class="typing-text" data-text="whoami --verbose"></span>
+                <span class="cursor">|</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-universe">
+          <!-- Central Avatar/Identity Hub -->
+          <div class="identity-hub">
+            <div class="avatar-container">
+              <div class="avatar-ring-1"></div>
+              <div class="avatar-ring-2"></div>
+              <div class="avatar-ring-3"></div>
+              <div class="avatar-core">
+                <div class="avatar-face">
+                  <div class="digital-portrait">
+                    <div class="pixel-art">
+                      <div class="pixel-row">
+                        <span></span><span></span><span class="active"></span><span class="active"></span><span class="active"></span><span></span><span></span>
+                      </div>
+                      <div class="pixel-row">
+                        <span></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span></span>
+                      </div>
+                      <div class="pixel-row">
+                        <span class="active"></span><span class="active"></span><span class="glow"></span><span class="active"></span><span class="glow"></span><span class="active"></span><span class="active"></span>
+                      </div>
+                      <div class="pixel-row">
+                        <span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span>
+                      </div>
+                      <div class="pixel-row">
+                        <span class="active"></span><span></span><span class="active"></span><span class="active"></span><span class="active"></span><span></span><span class="active"></span>
+                      </div>
+                      <div class="pixel-row">
+                        <span></span><span class="active"></span><span></span><span class="active"></span><span></span><span class="active"></span><span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="identity-data">
+                  <div class="name-display">
+                    <h1 class="holographic-name">SHIVDUTT.KARWA</h1>
+                    <div class="title-stream">
+                      <span class="role-tag">FULL_STACK_ARCHITECT</span>
+                      <span class="separator">|</span>
+                      <span class="status-indicator">ONLINE</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Info Panels -->
+            <div class="info-panels">
+              <div class="info-panel panel-1" data-category="experience">
+                <div class="panel-header">
+                  <div class="panel-icon">⚡</div>
+                  <span class="panel-title">EXP_LEVEL</span>
+                </div>
+                <div class="panel-content">
+                  <div class="stat-display">
+                    <span class="stat-value">5.2</span>
+                    <span class="stat-unit">YEARS</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 87%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-panel panel-2" data-category="projects">
+                <div class="panel-header">
+                  <div class="panel-icon">🚀</div>
+                  <span class="panel-title">PROJECTS</span>
+                </div>
+                <div class="panel-content">
+                  <div class="stat-display">
+                    <span class="stat-value">73</span>
+                    <span class="stat-unit">COMPLETED</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 94%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-panel panel-3" data-category="skills">
+                <div class="panel-header">
+                  <div class="panel-icon">🧠</div>
+                  <span class="panel-title">TECH_STACK</span>
+                </div>
+                <div class="panel-content">
+                  <div class="stat-display">
+                    <span class="stat-value">24</span>
+                    <span class="stat-unit">LANGUAGES</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 96%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-panel panel-4" data-category="creativity">
+                <div class="panel-header">
+                  <div class="panel-icon">✨</div>
+                  <span class="panel-title">CREATIVITY</span>
+                </div>
+                <div class="panel-content">
+                  <div class="stat-display">
+                    <span class="stat-value">∞</span>
+                    <span class="stat-unit">POTENTIAL</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill infinite" style="width: 100%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Constellation -->
+          <div class="skill-constellation">
+            <div class="constellation-center">
+              <div class="orbital-ring"></div>
+              <div class="orbital-particles">
+                <div class="particle particle-1"></div>
+                <div class="particle particle-2"></div>
+                <div class="particle particle-3"></div>
+                <div class="particle particle-4"></div>
+                <div class="particle particle-5"></div>
+                <div class="particle particle-6"></div>
+              </div>
+              <div class="core-skill">FULL-STACK</div>
+            </div>
+            
+            <!-- Frontend Cluster -->
+            <div class="skill-cluster frontend-cluster">
+              <div class="cluster-label">FRONTEND</div>
+              <div class="skill-node" data-skill="React" data-level="95">
+                <div class="node-core"></div>
+                <div class="node-orbit"></div>
+                <span class="node-label">React</span>
+              </div>
+              <div class="skill-node" data-skill="TypeScript" data-level="88">
+                <div class="node-core"></div>
+                <div class="node-orbit"></div>
+                <span class="node-label">TypeScript</span>
+              </div>
+              <div class="skill-node" data-skill="Next.js" data-level="92">
+                <div class="node-core"></div>
+                <div class="node-orbit"></div>
+                <span class="node-label">Next.js</span>
+              </div>
+              <div class="skill-node" data-skill="Three.js" data-level="78">
+                <div class="node-core"></div>
+                <div class="node-orbit"></div>
+                <span class="node-label">Three.js</span>
+              </div>
+            </div>
+
+            <!-- Backend Cluster -->
+            <div class="skill-cluster backend-cluster">
+              <div class="cluster-label">BACKEND</div>
+              <div class="skill-node" data-skill="Node.js" data-level="94">
+                <div class="node-core"></div>
+                <div class="node-orbit"></div>
+                <span class="node-label">Node.js</span>
+              </div>
+              <div class="skill-node" data-skill="GraphQL" data-level="85">
+                <div class="node-core"></div>
+                <div class="node-orbit"></div>
+                <span class="node-label">GraphQL</span>
+              </div>
+              <div class="skill-node" data-skill="PostgreSQL" data-level="89">
+                <div class="node-core"></div>
+                <div class="node-orbit"></div>
+                <span class="node-label">PostgreSQL</span>
+              </div>
+              <div class="skill-node" data-skill="Docker" data-level="82">
+                <div class="node-core"></div>
+                <div class="node-orbit"></div>
+                <span class="node-label">Docker</span>
+              </div>
+            </div>
+
+            <!-- Mobile Cluster -->
+            <div class="skill-cluster mobile-cluster">
+              <div class="cluster-label">MOBILE</div>
+              <div class="skill-node" data-skill="React Native" data-level="87">
+                <div class="node-core"></div>
+                <div class="node-orbit"></div>
+                <span class="node-label">React Native</span>
+              </div>
+              <div class="skill-node" data-skill="Flutter" data-level="76">
+                <div class="node-core"></div>
+                <div class="node-orbit"></div>
+                <span class="node-label">Flutter</span>
+              </div>
+            </div>
+
+            <!-- Cloud Cluster -->
+            <div class="skill-cluster cloud-cluster">
+              <div class="cluster-label">CLOUD</div>
+              <div class="skill-node" data-skill="AWS" data-level="83">
+                <div class="node-core"></div>
+                <div class="node-orbit"></div>
+                <span class="node-label">AWS</span>
+              </div>
+              <div class="skill-node" data-skill="Firebase" data-level="91">
+                <div class="node-core"></div>
+                <div class="node-orbit"></div>
+                <span class="node-label">Firebase</span>
+              </div>
+            </div>
+
+            <!-- Connecting Lines -->
+            <svg class="constellation-connections">
+              <defs>
+                <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:var(--primary);stop-opacity:0" />
+                  <stop offset="50%" style="stop-color:var(--primary);stop-opacity:0.8" />
+                  <stop offset="100%" style="stop-color:var(--tertiary);stop-opacity:0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <!-- Personality Matrix -->
+          <div class="personality-matrix">
+            <div class="matrix-header">
+              <h3 class="matrix-title">PERSONALITY_MATRIX.JSON</h3>
+            </div>
+            <div class="trait-visualizer">
+              <div class="trait-item">
+                <div class="trait-label">PROBLEM_SOLVER</div>
+                <div class="trait-bar">
+                  <div class="trait-fill" style="width: 96%"></div>
+                  <span class="trait-value">96%</span>
+                </div>
+              </div>
+              <div class="trait-item">
+                <div class="trait-label">CREATIVE_THINKER</div>
+                <div class="trait-bar">
+                  <div class="trait-fill" style="width: 89%"></div>
+                  <span class="trait-value">89%</span>
+                </div>
+              </div>
+              <div class="trait-item">
+                <div class="trait-label">TEAM_PLAYER</div>
+                <div class="trait-bar">
+                  <div class="trait-fill" style="width: 93%"></div>
+                  <span class="trait-value">93%</span>
+                </div>
+              </div>
+              <div class="trait-item">
+                <div class="trait-label">CONTINUOUS_LEARNER</div>
+                <div class="trait-bar">
+                  <div class="trait-fill" style="width: 98%"></div>
+                  <span class="trait-value">98%</span>
+                </div>
+              </div>
+              <div class="trait-item">
+                <div class="trait-label">COFFEE_DEPENDENCY</div>
+                <div class="trait-bar">
+                  <div class="trait-fill infinite" style="width: 100%"></div>
+                  <span class="trait-value">∞%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mission Statement -->
+          <div class="mission-statement">
+            <div class="hologram-text">
+              <div class="mission-content">
+                <p class="mission-quote">
+                  "Transforming ideas into digital reality through elegant code, 
+                  innovative solutions, and relentless pursuit of perfection."
+                </p>
+                <div class="mission-signature">
+                  <span class="signature-line">// Shivdutt Karwa</span>
+                  <div class="signature-hash">#FullStackVisionary</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -910,7 +1202,27 @@
 
       <!-- Contact Section -->
       <section class="contact" data-scroll-section id="contact">
-        <h2>GET IN TOUCH</h2>
+        <div class="contact-header">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-buttons">
+                <span class="btn red"></span>
+                <span class="btn yellow"></span>
+                <span class="btn green"></span>
+              </div>
+              <div class="terminal-title">contact.tsx</div>
+            </div>
+            <div class="terminal-content">
+              <div class="code-line">
+                <span class="code-comment">// Let's Connect</span>
+              </div>
+              <div class="code-line">
+                <span class="code-keyword">const</span>
+                <span class="code-function">connect</span> = () => {
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="contact-content">
           <a href="mailto:hello@Shivduttkarwa@gmail.com" class="contact-email"
             >shivduttkarwa@gmail.com</a
@@ -1776,6 +2088,168 @@
         } else {
           initCodingBackground();
         }
+      })();
+    </script>
+
+    <!-- Neural Network Background Script -->
+    <script>
+      // Neural Network Background for About Section
+      (function() {
+        let neuralCanvas, ctx, particles = [], connections = [];
+        const maxParticles = 80;
+        const connectionDistance = 120;
+        let mouse = { x: 0, y: 0 };
+
+        function initNeuralNetwork() {
+          neuralCanvas = document.getElementById('neural-canvas');
+          if (!neuralCanvas) return;
+
+          ctx = neuralCanvas.getContext('2d');
+          resizeCanvas();
+          
+          // Create particles
+          for (let i = 0; i < maxParticles; i++) {
+            particles.push(createParticle());
+          }
+          
+          // Start animation
+          animate();
+          
+          // Mouse interaction
+          neuralCanvas.addEventListener('mousemove', (e) => {
+            const rect = neuralCanvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+          });
+
+          window.addEventListener('resize', resizeCanvas);
+        }
+
+        function createParticle() {
+          return {
+            x: Math.random() * neuralCanvas.width,
+            y: Math.random() * neuralCanvas.height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            radius: Math.random() * 2 + 1,
+            alpha: Math.random() * 0.5 + 0.3,
+            color: ['#ff5e1a', '#1affd5', '#ff1a6a'][Math.floor(Math.random() * 3)]
+          };
+        }
+
+        function resizeCanvas() {
+          if (!neuralCanvas) return;
+          const container = neuralCanvas.parentElement;
+          neuralCanvas.width = container.offsetWidth;
+          neuralCanvas.height = container.offsetHeight;
+        }
+
+        function animate() {
+          if (!ctx || !neuralCanvas) return;
+
+          // Clear canvas
+          ctx.clearRect(0, 0, neuralCanvas.width, neuralCanvas.height);
+          
+          // Update particles
+          particles.forEach((particle, i) => {
+            // Move particle
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            
+            // Boundary check
+            if (particle.x < 0 || particle.x > neuralCanvas.width) {
+              particle.vx *= -1;
+            }
+            if (particle.y < 0 || particle.y > neuralCanvas.height) {
+              particle.vy *= -1;
+            }
+            
+            // Mouse interaction
+            const dx = mouse.x - particle.x;
+            const dy = mouse.y - particle.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < 100) {
+              const force = (100 - distance) / 100;
+              particle.vx += dx * force * 0.01;
+              particle.vy += dy * force * 0.01;
+            }
+            
+            // Draw particle
+            ctx.beginPath();
+            ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+            ctx.fillStyle = particle.color + Math.floor(particle.alpha * 255).toString(16).padStart(2, '0');
+            ctx.fill();
+            
+            // Draw connections
+            particles.slice(i + 1).forEach(otherParticle => {
+              const dx = particle.x - otherParticle.x;
+              const dy = particle.y - otherParticle.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+              
+              if (distance < connectionDistance) {
+                const opacity = (connectionDistance - distance) / connectionDistance;
+                ctx.beginPath();
+                ctx.moveTo(particle.x, particle.y);
+                ctx.lineTo(otherParticle.x, otherParticle.y);
+                ctx.strokeStyle = `rgba(255, 94, 26, ${opacity * 0.3})`;
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
+              }
+            });
+          });
+          
+          requestAnimationFrame(animate);
+        }
+
+        // Initialize when page loads
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initNeuralNetwork);
+        } else {
+          initNeuralNetwork();
+        }
+      })();
+
+      // Skill Constellation Connections
+      (function() {
+        function drawConnections() {
+          const svg = document.querySelector('.constellation-connections');
+          const skillNodes = document.querySelectorAll('.skill-node');
+          const center = document.querySelector('.constellation-center');
+          
+          if (!svg || !center) return;
+          
+          // Clear existing connections
+          svg.innerHTML = svg.querySelector('defs').outerHTML;
+          
+          const centerRect = center.getBoundingClientRect();
+          const svgRect = svg.getBoundingClientRect();
+          
+          const centerX = centerRect.left + centerRect.width / 2 - svgRect.left;
+          const centerY = centerRect.top + centerRect.height / 2 - svgRect.top;
+          
+          skillNodes.forEach(node => {
+            const nodeRect = node.getBoundingClientRect();
+            const nodeX = nodeRect.left + nodeRect.width / 2 - svgRect.left;
+            const nodeY = nodeRect.top + nodeRect.height / 2 - svgRect.top;
+            
+            // Create connection line
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', centerX);
+            line.setAttribute('y1', centerY);
+            line.setAttribute('x2', nodeX);
+            line.setAttribute('y2', nodeY);
+            line.setAttribute('stroke', 'url(#connectionGradient)');
+            line.setAttribute('stroke-width', '1');
+            line.setAttribute('opacity', '0.4');
+            
+            svg.appendChild(line);
+          });
+        }
+        
+        // Draw connections after layout
+        setTimeout(drawConnections, 1000);
+        window.addEventListener('resize', () => setTimeout(drawConnections, 100));
       })();
     </script>
   </body>

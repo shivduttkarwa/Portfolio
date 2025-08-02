@@ -2,9 +2,11 @@
   --bg: #0f0f0f;
   --text: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
-  --primary: #ff5e1a;
-  --secondary: #ff1a6a;
-  --tertiary: #1affd5;
+  --primary: #e74c3c;
+  --secondary: #3498db;
+  --tertiary: #f39c12;
+  --accent: #27ae60;
+  --neon: #9b59b6;
   --gray: #1e1e1e;
   --light-gray: #2a2a2a;
 
@@ -2280,14 +2282,14 @@ a-hole canvas {
 
 /* Revolution Cards */
 .revolution-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
-  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2rem;
   position: relative;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.3s ease;
   cursor: pointer;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(15px);
   overflow: hidden;
   height: 100%;
   display: flex;
@@ -2295,7 +2297,7 @@ a-hole canvas {
   opacity: 1 !important;
   visibility: visible !important;
   z-index: 10;
-  min-height: 400px;
+  min-height: 340px;
 }
 
 .card-glow {
@@ -2344,8 +2346,10 @@ a-hole canvas {
 }
 
 .revolution-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 94, 26, 0.1);
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 94, 26, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 /* Card Content Revolution */
@@ -2378,8 +2382,8 @@ a-hole canvas {
 }
 
 .revolution-card:hover .icon-container {
-  background: rgba(255, 94, 26, 0.2);
-  transform: scale(1.1);
+  background: rgba(255, 94, 26, 0.1);
+  transform: scale(1.05);
 }
 
 .service-info {
@@ -2410,7 +2414,7 @@ a-hole canvas {
 }
 
 .revolution-card:hover .service-title-rev {
-  color: var(--tertiary) !important;
+  color: rgba(255, 255, 255, 1) !important;
 }
 
 .service-desc-rev {
@@ -2447,10 +2451,8 @@ a-hole canvas {
 }
 
 .revolution-card:hover .tech-chip {
-  background: rgba(26, 255, 213, 0.1);
-  border-color: rgba(26, 255, 213, 0.3);
-  color: var(--tertiary);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Card Action */
@@ -2479,7 +2481,7 @@ a-hole canvas {
   background: rgba(255, 94, 26, 0.1);
   border-color: var(--primary);
   color: var(--primary);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* Card Hover Effect */
@@ -2501,7 +2503,7 @@ a-hole canvas {
 }
 
 .revolution-card:hover .card-hover-effect {
-  opacity: 1;
+  opacity: 0.3;
 }
 
 /* Revolution CTA */
@@ -2648,7 +2650,8 @@ a-hole canvas {
   }
 
   .revolution-card {
-    padding: 2rem;
+    padding: 1.75rem;
+    min-height: 300px;
   }
 
   .service-number-rev {
@@ -2712,7 +2715,8 @@ a-hole canvas {
 
 @media (max-width: 480px) {
   .revolution-card {
-    padding: 1.5rem;
+    padding: 1.25rem;
+    min-height: 280px;
   }
 
   .service-title-rev {
@@ -2824,93 +2828,1196 @@ blockquote::before {
   font-size: 0.9rem;
 }
 /* About Section */
-.about {
-  min-height: 100vh;
-  padding: 15vh 5vw;
+/* ==================== REVOLUTIONARY FUTURISTIC ABOUT SECTION ==================== */
+
+.about-futuristic {
+  min-height: 300vh;
+  position: relative;
+  background: radial-gradient(ellipse at center, rgba(15, 15, 30, 1) 0%, rgba(5, 5, 15, 1) 100%);
+  overflow: hidden;
 }
 
-.about h2 {
-  font-family: var(--font4);
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 400;
-  margin-bottom: 5rem;
-  background: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    rgba(255, 255, 255, 0.8) 50%,
-    #00ff64 100%
-  );
+/* Neural Network Background */
+.neural-network-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#neural-canvas {
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+
+/* Floating Terminal */
+.floating-terminal {
+  position: absolute;
+  top: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  animation: terminalFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes terminalFloat {
+  0% { transform: translateX(-50%) translateY(0px); }
+  100% { transform: translateX(-50%) translateY(-20px); }
+}
+
+.holo-terminal {
+  position: relative;
+  background: rgba(0, 20, 40, 0.95);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 50px rgba(255, 94, 26, 0.5), inset 0 0 50px rgba(255, 94, 26, 0.1);
+  overflow: hidden;
+}
+
+.terminal-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 94, 26, 0.1) 0%, transparent 70%);
+  animation: terminalGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes terminalGlow {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(180deg) scale(1.1); }
+}
+
+.terminal-buttons .pulse {
+  animation: buttonPulse 2s ease-in-out infinite;
+}
+
+@keyframes buttonPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.9); }
+}
+
+.glitch {
+  position: relative;
+  animation: glitchText 3s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  animation: glitchBefore 1s infinite;
+  color: var(--secondary);
+  z-index: -1;
+}
+
+.glitch::after {
+  animation: glitchAfter 1s infinite;
+  color: var(--tertiary);
+  z-index: -2;
+}
+
+@keyframes glitchText {
+  0%, 98% { transform: translate(0); }
+  1% { transform: translate(-2px, 1px); }
+  2% { transform: translate(2px, -1px); }
+  3% { transform: translate(-1px, 2px); }
+  4% { transform: translate(1px, -2px); }
+}
+
+@keyframes glitchBefore {
+  0%, 98% { transform: translate(0); }
+  1% { transform: translate(2px, 0); }
+  2% { transform: translate(-2px, 0); }
+}
+
+@keyframes glitchAfter {
+  0%, 98% { transform: translate(0); }
+  1% { transform: translate(-2px, 0); }
+  2% { transform: translate(2px, 0); }
+}
+
+.typing-animation {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.typing-text::after {
+  content: '';
+  animation: typeWriter 4s steps(20) infinite;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes typeWriter {
+  0% { content: ''; }
+  10% { content: 'w'; }
+  20% { content: 'wh'; }
+  30% { content: 'who'; }
+  40% { content: 'whoa'; }
+  50% { content: 'whoam'; }
+  60% { content: 'whoami'; }
+  70% { content: 'whoami '; }
+  80% { content: 'whoami -'; }
+  90% { content: 'whoami --'; }
+  100% { content: 'whoami --verbose'; }
+}
+
+/* About Universe */
+.about-universe {
+  position: relative;
+  min-height: 300vh;
+  padding: 25vh 2rem 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25vh;
+  z-index: 5;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Identity Hub */
+.identity-hub {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.avatar-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-ring-1,
+.avatar-ring-2,
+.avatar-ring-3 {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid;
+  animation: ringRotate 20s linear infinite;
+}
+
+.avatar-ring-1 {
+  width: 500px;
+  height: 500px;
+  border-color: var(--primary);
+  opacity: 0.3;
+  animation-duration: 20s;
+}
+
+.avatar-ring-2 {
+  width: 400px;
+  height: 400px;
+  border-color: var(--tertiary);
+  opacity: 0.4;
+  animation-duration: 15s;
+  animation-direction: reverse;
+}
+
+.avatar-ring-3 {
+  width: 300px;
+  height: 300px;
+  border-color: var(--secondary);
+  opacity: 0.5;
+  animation-duration: 25s;
+}
+
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.avatar-core {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 94, 26, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 50px rgba(255, 94, 26, 0.5);
+  animation: coreFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes coreFloat {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(-10px) scale(1.05); }
+}
+
+.digital-portrait {
+  margin-bottom: 1rem;
+}
+
+.pixel-art {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pixel-row {
+  display: flex;
+  gap: 2px;
+}
+
+.pixel-row span {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+  border-radius: 1px;
+}
+
+.pixel-row span.active {
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.pixel-row span.glow {
+  background: var(--tertiary);
+  box-shadow: 0 0 15px var(--tertiary);
+  animation: pixelGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pixelGlow {
+  0% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.holographic-name {
+  font-family: var(--font1);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: transparent;
+  background: linear-gradient(45deg, var(--primary), var(--tertiary), var(--secondary), var(--primary));
+  background-size: 300% 300%;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease-in-out infinite alternate;
-  position: relative;
-  letter-spacing: 0.1em;
+  animation: holographicShift 3s ease-in-out infinite;
   text-align: center;
+  letter-spacing: 2px;
 }
 
-.about h2::before {
-  content: ">";
-  color: var(--primary);
-  margin-right: 1rem;
-  -webkit-text-fill-color: var(--primary);
+@keyframes holographicShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-.about h2::after {
-  content: "_";
-  margin-left: 0.5rem;
-  animation: blink 1s step-end infinite;
-}
-
-.about-content {
+.title-stream {
   display: flex;
-  gap: 10vw;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-family: var(--font2);
+  font-size: 0.7rem;
+  color: var(--tertiary);
 }
 
-.about-text {
-  flex: 2;
+.status-indicator {
+  animation: statusBlink 2s ease-in-out infinite;
+}
+
+@keyframes statusBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+/* Info Panels */
+.info-panels {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.info-panel {
+  position: absolute;
+  width: 180px;
+  background: rgba(0, 20, 40, 0.9);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  padding: 1rem;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 30px rgba(255, 94, 26, 0.3);
+  animation: panelFloat 6s ease-in-out infinite;
+}
+
+.panel-1 {
+  top: 5%;
+  left: -25%;
+  animation-delay: 0s;
+}
+
+.panel-2 {
+  top: 5%;
+  right: -25%;
+  animation-delay: 1s;
+}
+
+.panel-3 {
+  bottom: 5%;
+  left: -25%;
+  animation-delay: 2s;
+}
+
+.panel-4 {
+  bottom: 5%;
+  right: -25%;
+  animation-delay: 3s;
+}
+
+@keyframes panelFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.panel-icon {
   font-size: 1.2rem;
-  line-height: 1.8;
 }
 
-.about-text p {
-  margin-bottom: 2rem;
-}
-
-.skills {
-  flex: 1;
-  display: flex;
-  gap: 5vw;
-}
-
-.skills-column h4 {
-  font-family: var(--font3);
-  font-size: 1.1rem;
+.panel-title {
+  font-family: var(--font2);
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--primary);
+  letter-spacing: 1px;
+}
+
+.stat-display {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-family: var(--font1);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--tertiary);
+}
+
+.stat-unit {
+  font-family: var(--font2);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--tertiary));
+  border-radius: 2px;
+  animation: progressGlow 2s ease-in-out infinite alternate;
+}
+
+.progress-fill.infinite {
+  animation: infiniteProgress 1.5s ease-in-out infinite;
+}
+
+@keyframes progressGlow {
+  0% { box-shadow: 0 0 5px var(--primary); }
+  100% { box-shadow: 0 0 15px var(--tertiary); }
+}
+
+@keyframes infiniteProgress {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Skill Constellation */
+.skill-constellation {
+  position: relative;
+  width: 1000px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+.constellation-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--neon);
+  border-radius: 50%;
+  background: rgba(155, 89, 182, 0.08);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.orbital-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(155, 89, 182, 0.3);
+  border-radius: 50%;
+  animation: orbitRotate 30s linear infinite;
+  z-index: 1;
+}
+
+.orbital-particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  z-index: 2;
+}
+
+.orbital-particles .particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--neon);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: particleOrbit 25s linear infinite;
+}
+
+.particle-1 { top: 0; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
+.particle-2 { top: 25%; right: 13%; animation-delay: -4s; }
+.particle-3 { top: 50%; right: 0; transform: translateY(-50%); animation-delay: -8s; }
+.particle-4 { bottom: 25%; right: 13%; animation-delay: -12s; }
+.particle-5 { bottom: 0; left: 50%; transform: translateX(-50%); animation-delay: -16s; }
+.particle-6 { top: 25%; left: 13%; animation-delay: -20s; }
+
+.constellation-center::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, rgba(124, 58, 237, 0.2) 50%, transparent 80%);
+  border-radius: 50%;
+  animation: coreGlow 4s ease-in-out infinite alternate;
+}
+
+.constellation-center::after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  border-style: dashed;
+  opacity: 0.4;
+  animation: orbitRing 15s linear infinite;
+}
+
+@keyframes coreGlow {
+  0% { 
+    transform: scale(1); 
+    box-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary); 
+  }
+  100% { 
+    transform: scale(1.1); 
+    box-shadow: 0 0 40px var(--primary), 0 0 80px var(--primary); 
+  }
+}
+
+@keyframes orbitRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.core-skill {
+  font-family: var(--font1);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--neon);
+  text-align: center;
+  letter-spacing: 1.2px;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes coreTextShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Add orbital particles around center */
+.constellation-center .orbital-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--neon);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--neon);
+}
+
+.constellation-center .orbital-particle:nth-child(1) {
+  top: 10%;
+  left: 50%;
+  animation: orbit 8s linear infinite;
+}
+
+.constellation-center .orbital-particle:nth-child(2) {
+  top: 50%;
+  right: 10%;
+  animation: orbit 12s linear infinite reverse;
+}
+
+.constellation-center .orbital-particle:nth-child(3) {
+  bottom: 10%;
+  left: 50%;
+  animation: orbit 6s linear infinite;
+}
+
+.constellation-center .orbital-particle:nth-child(4) {
+  top: 50%;
+  left: 10%;
+  animation: orbit 10s linear infinite reverse;
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+
+.skill-cluster {
+  position: absolute;
+}
+
+.frontend-cluster {
+  top: 8%;
+  left: 8%;
+  animation: clusterFloat 8s ease-in-out infinite;
+}
+
+.backend-cluster {
+  top: 8%;
+  right: 8%;
+  animation: clusterFloat 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.mobile-cluster {
+  bottom: 8%;
+  left: 8%;
+  animation: clusterFloat 8s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.cloud-cluster {
+  bottom: 8%;
+  right: 8%;
+  animation: clusterFloat 8s ease-in-out infinite;
+  animation-delay: 6s;
+}
+
+@keyframes clusterFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.cluster-label {
+  font-family: var(--font2);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--tertiary);
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.skill-node {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: 0.5rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.node-core {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+  border: 2px solid var(--secondary);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.node-orbit {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 70px;
+  height: 70px;
+  border: 1px solid var(--tertiary);
+  border-radius: 50%;
+  opacity: 0;
+  animation: orbitRotate 3s linear infinite;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes orbitRotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes particleOrbit {
+  from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+.skill-node:hover .node-core {
+  background: rgba(231, 76, 60, 0.15);
+  border-color: var(--primary);
+  box-shadow: 0 0 30px var(--primary);
+  transform: scale(1.2);
+}
+
+.skill-node:hover .node-orbit {
+  opacity: 1;
+}
+
+.node-label {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font2);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.skill-node:hover .node-label {
+  color: var(--primary);
+}
+
+.constellation-connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Personality Matrix */
+.personality-matrix {
+  width: 100%;
+  max-width: 700px;
+  background: rgba(0, 20, 40, 0.9);
+  border: 2px solid var(--tertiary);
+  border-radius: 15px;
+  padding: 2.5rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 50px rgba(26, 255, 213, 0.3);
+  margin: 0 auto;
+}
+
+.matrix-title {
+  font-family: var(--font1);
+  font-size: 1.2rem;
+  color: var(--tertiary);
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+.trait-item {
   margin-bottom: 1.5rem;
 }
 
-.skills-column ul {
-  list-style: none;
+.trait-label {
+  font-family: var(--font2);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.skills-column li {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+.trait-bar {
   position: relative;
-  padding-left: 1.5rem;
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
-.skills-column li::before {
-  content: "";
+.trait-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--secondary), var(--tertiary));
+  border-radius: 4px;
+  transition: width 2s ease;
+  animation: traitGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes traitGlow {
+  0% { box-shadow: 0 0 10px var(--secondary); }
+  100% { box-shadow: 0 0 20px var(--tertiary); }
+}
+
+.trait-value {
   position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 8px;
-  height: 1px;
-  background-color: var(--primary);
+  right: 0;
+  top: -25px;
+  font-family: var(--font1);
+  font-size: 0.8rem;
+  color: var(--tertiary);
+  font-weight: 700;
+}
+
+/* Mission Statement */
+.mission-statement {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hologram-text {
+  position: relative;
+  background: rgba(0, 30, 60, 0.8);
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  padding: 3rem;
+  backdrop-filter: blur(25px);
+  box-shadow: 0 0 60px rgba(255, 94, 26, 0.4);
+  animation: hologramFloat 5s ease-in-out infinite alternate;
+}
+
+@keyframes hologramFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-15px); }
+}
+
+.mission-quote {
+  font-family: var(--font3);
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.signature-line {
+  font-family: var(--font2);
+  font-size: 1rem;
+  color: var(--tertiary);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.signature-hash {
+  font-family: var(--font1);
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Futuristic About Section Responsive Design */
+@media (max-width: 1200px) {
+  .about-universe {
+    gap: 20vh;
+    padding: 20vh 2rem 8vh;
+  }
+  
+  .identity-hub {
+    width: 500px;
+    height: 500px;
+  }
+  
+  .skill-constellation {
+    width: 800px;
+    height: 600px;
+  }
+  
+  .info-panel {
+    width: 160px;
+    padding: 0.8rem;
+  }
+  
+  .panel-1, .panel-3 {
+    left: -22%;
+  }
+  
+  .panel-2, .panel-4 {
+    right: -22%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-futuristic {
+    min-height: 250vh;
+  }
+  
+  .about-universe {
+    gap: 15vh;
+    padding: 18vh 1rem 8vh;
+  }
+  
+  .identity-hub {
+    width: 450px;
+    height: 450px;
+  }
+  
+  .avatar-ring-1 {
+    width: 380px;
+    height: 380px;
+  }
+  
+  .avatar-ring-2 {
+    width: 310px;
+    height: 310px;
+  }
+  
+  .avatar-ring-3 {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .skill-constellation {
+    width: 700px;
+    height: 500px;
+  }
+  
+  .panel-1, .panel-3 {
+    left: -28%;
+  }
+  
+  .panel-2, .panel-4 {
+    right: -28%;
+  }
+  
+  .hologram-text {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-futuristic {
+    min-height: 180vh;
+    overflow-x: hidden;
+  }
+  
+  .about-universe {
+    gap: 8vh;
+    padding: 10vh 1rem 6vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  .floating-terminal {
+    top: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    width: 95%;
+    max-width: 400px;
+  }
+  
+  .holo-terminal {
+    transform: scale(0.8);
+    padding: 1rem;
+  }
+  
+  .identity-hub {
+    width: 280px;
+    height: 280px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .avatar-ring-1 {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .avatar-ring-2 {
+    width: 230px;
+    height: 230px;
+  }
+  
+  .avatar-ring-3 {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .avatar-core {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .holographic-name {
+    font-size: 1.3rem;
+  }
+  
+  .info-panel {
+    width: 140px;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    position: static !important;
+    transform: none !important;
+    margin: 1rem auto;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+  }
+  
+  .panel-1, .panel-3 {
+    left: -30%;
+  }
+  
+  .panel-2, .panel-4 {
+    right: -30%;
+  }
+  
+  .skill-constellation {
+    width: 100%;
+    height: 50vh;
+    max-width: 100vw;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .skill-cluster {
+    transform: scale(0.75);
+  }
+  
+  .skill-node {
+    width: 40px;
+    height: 40px;
+    font-size: 0.65rem;
+  }
+  
+  .cluster-label {
+    font-size: 0.85rem;
+  }
+  
+  .personality-matrix {
+    width: 95%;
+    max-width: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+  }
+  
+  .mission-holo {
+    width: 95%;
+    max-width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+  }
+  
+  .constellation-center {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .orbital-ring {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .orbital-particles .particle {
+    width: 3px;
+    height: 3px;
+  }
+  
+  .core-skill {
+    font-size: 0.75rem;
+  }
+  
+  .matrix-title {
+    font-size: 1.1rem;
+  }
+  
+  .mission-quote {
+    font-size: 1.2rem;
+  }
+  
+  .hologram-text {
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-futuristic {
+    min-height: 180vh;
+  }
+  
+  .about-universe {
+    gap: 10vh;
+    padding: 12vh 1rem 6vh;
+  }
+  
+  .floating-terminal {
+    top: 4vh;
+  }
+  
+  .holo-terminal {
+    transform: scale(0.85);
+  }
+  
+  .identity-hub {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .avatar-ring-1 {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .avatar-ring-2 {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .avatar-ring-3 {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .avatar-core {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .holographic-name {
+    font-size: 1.1rem;
+  }
+  
+  .pixel-art {
+    transform: scale(0.8);
+  }
+  
+  .info-panel {
+    width: 130px;
+    padding: 0.6rem;
+  }
+  
+  .stat-value {
+    font-size: 1.3rem;
+  }
+  
+  .panel-1, .panel-3 {
+    left: -35%;
+  }
+  
+  .panel-2, .panel-4 {
+    right: -35%;
+  }
+  
+  .skill-constellation {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+  }
+  
+  .skill-cluster {
+    transform: scale(0.7);
+  }
+  
+  .constellation-center {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .core-skill {
+    font-size: 0.65rem;
+  }
+  
+  .skill-node {
+    width: 45px;
+    height: 45px;
+    margin: 0.4rem;
+  }
+  
+  .node-label {
+    font-size: 0.65rem;
+    bottom: -22px;
+  }
+  
+  .matrix-title {
+    font-size: 1rem;
+  }
+  
+  .trait-label {
+    font-size: 0.85rem;
+  }
+  
+  .trait-value {
+    font-size: 0.75rem;
+  }
+  
+  .mission-quote {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+  
+  .hologram-text {
+    padding: 1.5rem;
+  }
+  
+  .signature-line {
+    font-size: 0.95rem;
+  }
+  
+  .signature-hash {
+    font-size: 0.85rem;
+  }
 }
 
 /* Contact Section */
