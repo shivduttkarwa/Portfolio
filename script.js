@@ -8,12 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Register GSAP plugins
   gsap.registerPlugin(ScrollTrigger);
 
-  // Initialize Locomotive Scroll with better settings
+  // Initialize Locomotive Scroll with optimized settings for performance
   const scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
-    multiplier: 1,
+    multiplier: 0.8, // Reduced multiplier for smoother scrolling
     class: "is-revealed",
+    lerp: 0.05, // Smoother interpolation
     smartphone: {
       smooth: false,
       breakpoint: 768,
@@ -162,66 +163,177 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Initialize Recent Work Blog Slider - Exact same for all devices
-  const workBlogSlider = new Swiper(".blog-slider", {
-    spaceBetween: 30,
-    effect: "fade",
-    loop: true,
-    speed: 600,
-    mousewheel: {
-      invert: false,
-      releaseOnEdges: true,
-    },
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
-    pagination: {
-      el: ".blog-slider__pagination",
-      clickable: true,
-    },
-    fadeEffect: {
-      crossFade: true,
-    },
-    // Touch settings - same behavior for all devices
-    allowTouchMove: true,
-    touchRatio: 1,
-    touchAngle: 45,
-    grabCursor: true,
-    simulateTouch: true,
-    on: {
-      init: function () {
-        this.slides[this.activeIndex].classList.add("swiper-slide-active");
-      },
-      slideChange: function () {
-        this.slides.forEach((slide) => {
-          slide.classList.remove("swiper-slide-active");
-        });
-        this.slides[this.activeIndex].classList.add("swiper-slide-active");
-      },
-    },
-  });
 
-  // Disable locomotive scroll when mouse is over the blog slider
-  const blogSliderElement = document.querySelector(".blog-slider");
-  if (blogSliderElement && scroll) {
-    blogSliderElement.addEventListener("mouseenter", () => {
-      scroll.stop();
-    });
+  // ==================== WORK SLIDER FUNCTIONALITY ====================
+  
+  // Work Slider(all Slides in a container)
+  const workSlider = document.querySelector(".work-slider")
+  // All trails 
+  const workTrail = document.querySelector(".work-trail")?.querySelectorAll("div")
 
-    blogSliderElement.addEventListener("mouseleave", () => {
-      scroll.start();
-    });
+  if (workSlider && workTrail) {
+    // Transform value
+    let workValue = 0
+    // trail index number
+    let workTrailValue = 0
+    // interval (Duration)
+    let workInterval = 4000
 
-    // Also handle touch events for mobile
-    blogSliderElement.addEventListener("touchstart", () => {
-      scroll.stop();
-    });
+    // Function to slide forward
+    const workSlide = (condition) => {
+      // Clear interval
+      clearInterval(workStart)
+      // update value and trailValue
+      condition === "increase" ? workInitiateINC() : workInitiateDEC()
+      // move slide
+      workMove(workValue, workTrailValue)
+      // Restart Animation
+      workAnimate()
+      // start interval for slides back 
+      workStart = setInterval(() => workSlide("increase"), workInterval);
+    }
 
-    blogSliderElement.addEventListener("touchend", () => {
-      scroll.start();
-    });
+    // function for increase(forward, next) configuration
+    const workInitiateINC = () => {
+      // Remove active from all trails
+      workTrail.forEach(cur => cur.classList.remove("active"))
+      // increase transform value
+      workValue === 80 ? workValue = 0 : workValue += 20
+      // update trailValue based on value
+      workTrailUpdate()
+    }
+
+    // function for decrease(backward, previous) configuration
+    const workInitiateDEC = () => {
+      // Remove active from all trails
+      workTrail.forEach(cur => cur.classList.remove("active"))
+      // decrease transform value
+      workValue === 0 ? workValue = 80 : workValue -= 20
+      // update trailValue based on value
+      workTrailUpdate()
+    }
+
+    // function to transform slide 
+    const workMove = (S, T) => {
+      // transform slider
+      workSlider.style.transform = `translateX(-${S}%)`
+      //add active class to the current trail
+      workTrail[T].classList.add("active")
+    }
+
+    const workTl = gsap.timeline({defaults: {duration: 0.6, ease: "power2.inOut"}})
+    workTl.from(".work-bg", {x: "-100%", opacity: 0})
+      .from(".work-details p", {opacity: 0}, "-=0.3")
+      .from(".work-details h1", {opacity: 0, y: "30px"}, "-=0.3")
+      .from(".work-details button", {opacity: 0, y: "-40px"}, "-=0.8")
+
+    // function to restart animation
+    const workAnimate = () => workTl.restart()
+
+    // function to update trailValue based on slide value
+    const workTrailUpdate = () => {
+      if (workValue === 0) {
+        workTrailValue = 0
+      } else if (workValue === 20) {
+        workTrailValue = 1
+      } else if (workValue === 40) {
+        workTrailValue = 2
+      } else if (workValue === 60) {
+        workTrailValue = 3
+      } else {
+        workTrailValue = 4
+      }
+    }   
+
+    // Start interval for slides
+    let workStart = setInterval(() => workSlide("increase"), workInterval)
+
+    // Next and Previous button function (SVG icon with different classes)
+    document.querySelectorAll(".work-prev, .work-next").forEach(cur => {
+      // Assign function based on the class Name("work-next" and "work-prev")
+      cur.addEventListener("click", () => cur.classList.contains("work-next") ? workSlide("increase") : workSlide("decrease"))
+    })
+
+    // function to slide when trail is clicked
+    const workClickCheck = (e) => {
+      // Clear interval
+      clearInterval(workStart)
+      // remove active class from all trails
+      workTrail.forEach(cur => cur.classList.remove("active"))
+      // Get selected trail
+      const check = e.target
+      // add active class
+      check.classList.add("active")
+
+      // Update slide value based on the selected trail
+      if(check.classList.contains("work-box-1")) {
+        workValue = 0
+      } else if (check.classList.contains("work-box-2")) {
+        workValue = 20
+      } else if (check.classList.contains("work-box-3")) {
+        workValue = 40
+      } else if (check.classList.contains("work-box-4")) {
+        workValue = 60
+      } else {
+        workValue = 80
+      }
+      // update trail based on value
+      workTrailUpdate()
+      // transform slide
+      workMove(workValue, workTrailValue)
+      // start animation
+      workAnimate()
+      // start interval
+      workStart = setInterval(() => workSlide("increase"), workInterval)
+    }
+
+    // Add function to all trails
+    workTrail.forEach(cur => cur.addEventListener("click", (ev) => workClickCheck(ev)))
+
+    // Mobile touch Slide Section
+    const workTouchSlide = (() => {
+      let start, move, change, sliderWidth, startY
+
+      // Do this on initial touch on screen
+      workSlider.addEventListener("touchstart", (e) => {
+        // get the touch position of X and Y on the screen
+        start = e.touches[0].clientX
+        startY = e.touches[0].clientY
+        // (each slide width) the width of the slider container divided by the number of slides
+        sliderWidth = workSlider.clientWidth/workTrail.length
+      })
+      
+      // Do this on touchDrag on screen
+      workSlider.addEventListener("touchmove", (e) => {
+        // get the touch position of X and Y on the screen when dragging
+        move = e.touches[0].clientX
+        const moveY = e.touches[0].clientY
+        
+        // Calculate horizontal and vertical movement
+        const deltaX = Math.abs(start - move)
+        const deltaY = Math.abs(startY - moveY)
+        
+        // Only prevent default if horizontal movement is greater than vertical movement
+        // This allows vertical scrolling while enabling horizontal slider functionality
+        if (deltaX > deltaY && deltaX > 10) {
+          e.preventDefault()
+        }
+        
+        // Subtract initial position from end position and save to change variable
+        change = start - move
+      })
+
+      const workMobile = (e) => {
+        // if change is greater than a quarter of sliderWidth, next else Do NOTHING
+        change > (sliderWidth/4) ? workSlide("increase") : null;
+        // if change * -1 is greater than a quarter of sliderWidth, prev else Do NOTHING
+        (change * -1) > (sliderWidth/4) ? workSlide("decrease") : null;
+        // reset all variable to 0
+        [start, move, change, sliderWidth, startY] = [0,0,0,0,0]
+      }
+      // call mobile on touch end
+      workSlider.addEventListener("touchend", workMobile)
+    })()
   }
 
   // Initialize Testimonials Swiper
@@ -615,12 +727,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Scroll animations
+  // Optimized scroll animations with throttling
+  let ticking = false;
   scroll.on("scroll", (args) => {
-    gsap.to(".hero-image-wrapper", {
-      y: args.scroll.y * 0.1,
-      ease: "none",
-    });
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        gsap.to(".hero-image-wrapper", {
+          y: args.scroll.y * 0.05, // Reduced parallax intensity
+          ease: "none",
+          duration: 0.1, // Added duration for smoother animation
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
 
   // ==================== SERVICES SECTION ANIMATIONS ====================
@@ -671,26 +791,23 @@ document.addEventListener("DOMContentLoaded", () => {
         cardTl.reverse();
       });
       
-      // Add card reveal animation on scroll - but ensure cards are visible by default
-      gsap.set(card, { opacity: 1, y: 0, scale: 1 });
+      // Simplified card reveal animation for better performance
+      gsap.set(card, { opacity: 1, y: 0 });
       
       gsap.fromTo(card, 
         {
-          y: 50,
-          opacity: 0.8,
-          scale: 0.95
+          y: 30,
+          opacity: 0.5
         },
         {
           y: 0,
           opacity: 1,
-          scale: 1,
-          duration: 0.6,
-          ease: "power3.out",
-          delay: index * 0.1,
+          duration: 0.4, // Shorter duration
+          ease: "power2.out", // Simpler easing
+          delay: index * 0.05, // Reduced delay
           scrollTrigger: {
             trigger: card,
-            start: "top 90%",
-            end: "bottom 10%",
+            start: "top 85%",
             toggleActions: "play none none none"
           }
         }
@@ -790,15 +907,15 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
     
-    // Terminal glitch effect
+    // Optimized terminal glitch effect - less frequent to improve performance
     function createTerminalGlitch() {
       const terminalWindow = document.querySelector('.terminal-window');
       if (!terminalWindow) return;
       
       setInterval(() => {
         gsap.to(terminalWindow, {
-          x: Math.random() * 4 - 2,
-          duration: 0.1,
+          x: Math.random() * 2 - 1,
+          duration: 0.05,
           ease: "power2.out",
           yoyo: true,
           repeat: 1,
@@ -806,7 +923,7 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.set(terminalWindow, { x: 0 });
           }
         });
-      }, 8000 + Math.random() * 12000);
+      }, 15000 + Math.random() * 15000); // Less frequent
     }
     
     // Initialize terminal effects
@@ -827,7 +944,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const renderer = new THREE.WebGLRenderer({ 
         canvas: canvas, 
         alpha: true, 
-        antialias: true
+        antialias: false, // Disable antialiasing for better performance
+        powerPreference: "high-performance"
       });
       
       renderer.setSize(container.offsetWidth, container.offsetHeight);
@@ -994,10 +1112,10 @@ document.addEventListener("DOMContentLoaded", () => {
       window.addEventListener('resize', handleResize);
     }
     
-    // Initialize particle head background
-    if (document.querySelector('.particlehead')) {
-      initParticleHead();
-    }
+    // Particle head background disabled for performance
+    // if (document.querySelector('.particlehead')) {
+    //   initParticleHead();
+    // }
     
     // ==================== END WEBGL PARTICLE HEAD BACKGROUND ====================
  
